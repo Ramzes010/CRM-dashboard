@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'GolosText';
+    src: url('/public/fonts/static/Golos_Text/GolosText-Black.tff') format('tff');
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'GolosText';
+    src: url('/public/fonts/static/Golos_Text/GolosText-ExtraBold.tff') format('tff');
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'GolosText';
+    src: url('/public/fonts/static/Golos_Text/GolosText-Bold.tff') format('tff');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'GolosText';
+    src: url('/public/fonts/static/Golos_Text/GolosText-SemiBold.tff') format('tff');
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'GolosText';
+    src: url('/public/fonts/static/Golos_Text/GolosText-Medium.tff') format('tff');
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'GolosText';
+    src: url('/public/fonts/static/Golos_Text/GolosText-Regular.tff') format('tff');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'NAMU';
+    src: url('/public/fonts/namu-1750.tff') format('tff');
+    font-weight: 400;
+    font-style: normal;
+  }
