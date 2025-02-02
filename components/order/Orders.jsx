@@ -49,7 +49,7 @@ export default function Main() {
             date: "21 ЯНВ 24",
             category: "sheikh_mansurovsky",
             categoryName: "Шейх Мансуровский",
-            status: "В процессе",
+            status: "Готов",
             timeLeft: "1:15",
             items: "×1 Премиум, ×1 Мини",
           },
