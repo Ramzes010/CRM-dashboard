@@ -11,6 +11,10 @@ export default function Header() {
     router.push(path);
   };
 
+  const showAlert = () => {
+    alert("The button is muted. The page is being developed!");
+  };
+
   return (
     <header className="main-container w-full bg-[#e6ebce]">
       <div className="w-[100vw] h-[5.56vw] relative overflow-hidden mx-auto my-0 flex items-center">
@@ -21,7 +25,7 @@ export default function Header() {
             onClick={() => handleNavigation("/")}
           >
             <span className="h-[1.67vw] shrink-0 basis-auto golos-text font-[500] text-[1.11vw] font-medium leading-[1.67vw] text-[#003c46] hover:text-[#858745] relative text-left whitespace-nowrap z-[2]">
-              Заказы
+              Orders
             </span>
           </div>
           <div 
@@ -29,15 +33,15 @@ export default function Header() {
             onClick={() => handleNavigation("/dashboard")}
           >
             <span className="h-[1.67vw] shrink-0 basis-auto font-golos font-[500] text-[1.11vw] font-medium leading-[1.67vw] text-[#003c46] hover:text-[#858745] relative text-left whitespace-nowrap z-[4]">
-              Дашборд
+            Dashboard
             </span>
           </div>
           <div 
             className="flex w-[7.85vw] pt-[0.56vw] pr-[1.39vw] pb-[0.56vw] pl-[1.39vw] justify-center items-center self-stretch shrink-0 flex-nowrap relative z-[3] cursor-pointer"
-            onClick={() => handleNavigation("/workers")}
+            onClick={showAlert}
           >
             <span className="h-[1.67vw] shrink-0 basis-auto font-golos font-[500] text-[1.11vw] font-medium leading-[1.67vw] text-[#003c46] hover:text-[#858745] relative text-left whitespace-nowrap z-[4]">
-              Работники
+              Workers
             </span>
           </div>
         </div>

@@ -8,10 +8,10 @@ export default function Main() {
   const [loading, setLoading] = useState(false);
 
   const categories = [
-    { id: "all", name: "Все районы" },
-    { id: "baisangurovsky", name: "Байсангуровский" },
-    { id: "sheikh_mansurovsky", name: "Шейх Мансуровский" },
-    { id: "akhmatovsky", name: "Ахматовский" },
+    { id: "all", name: "All districts" },
+    { id: "baisangurovsky", name: "Baisangurovsky" },
+    { id: "sheikh_mansurovsky", name: "Sheikh Mansurovsky" },
+    { id: "akhmatovsky", name: "Akhmatovsky" },
   ];
 
   useEffect(() => {
@@ -24,41 +24,41 @@ export default function Main() {
             id: 1,
             number: 1,
             time: "18:50",
-            date: "21 ЯНВ 24",
+            date: "21 JAN 24",
             category: "akhmatovsky",
-            categoryName: "Ахматовский",
-            status: "Новый",
+            categoryName: "Akhmatovsky",
+            status: "New",
             timeLeft: "4:26",
-            items: "×1 Премиум, ×2 Стандарт",
+            items: "×1 Premium, ×2 Standard",
           },
           {
             id: 2,
             number: 2,
             time: "19:15",
-            date: "21 ЯНВ 24",
+            date: "21 JAN 24",
             category: "akhmatovsky",
-            categoryName: "Ахматовский",
-            status: "Готов",
+            categoryName: "Akhmatovsky",
+            status: "Ready",
             timeLeft: "0:00",
-            items: "×2 Мини",
+            items: "×2 Mini",
           },
           {
             id: 3,
             number: 3,
             time: "19:30",
-            date: "21 ЯНВ 24",
+            date: "21 JAN 24",
             category: "sheikh_mansurovsky",
-            categoryName: "Шейх Мансуровский",
-            status: "Готов",
+            categoryName: "Sheikh_mansurovsk",
+            status: "Ready",
             timeLeft: "1:15",
-            items: "×1 Премиум, ×1 Мини",
+            items: "×1 Premium, ×1 Mini",
           },
         ];
 
         await new Promise((resolve) => setTimeout(resolve, 1000)); // Имитация задержки
         setOrders(artificialOrders);
       } catch (error) {
-        console.error("Ошибка при загрузке заказов:", error);
+        console.error("Error loading orders:", error);
       } finally {
         setLoading(false);
       }
@@ -103,7 +103,7 @@ export default function Main() {
       {/* Заказы */}
       <div className={`orders-container mt-[2vw] p-[2vw] rounded-lg flex  flex-wrap gap-[2vw] ${filteredOrders.length <= 2 ? "justify-start" : "justify-around"}`}>
         {loading ? (
-          <p className="text-[1vw] text-[#888] text-center">Загрузка заказов...</p>
+          <p className="text-[1vw] text-[#888] text-center">Loading orders...</p>
         ) : filteredOrders.length > 0 ? (
           filteredOrders.map((order) => (
             <div
@@ -145,7 +145,7 @@ export default function Main() {
               <div className="flex flex-col gap-[1.667vw] items-start self-stretch shrink-0 flex-nowrap relative z-[15]">
                 <div className="flex flex-col gap-[0.556vw] items-start self-stretch shrink-0 flex-nowrap relative z-[16]">
                   <span className="h-[1.389vw] self-stretch shrink-0 basis-auto font-['Golos_Text'] text-[1.042vw] font-[460] leading-[1.389vw] text-[rgba(255,255,255,0.6)] tracking-[0.014vw] relative text-left uppercase whitespace-nowrap z-[17]">
-                    Заказ
+                  Order
                   </span>
                   <span className="h-[1.944vw] self-stretch shrink-0 basis-auto font-['Golos_Text'] text-[1.319vw] font-medium leading-[1.944vw] text-[#fff] relative text-left whitespace-nowrap z-[18]">
                     {order.items}
@@ -156,7 +156,7 @@ export default function Main() {
           </div>
           ))
         ) : (
-          <p className="text-[1vw] text-[#888] text-center">Нет заказов для этой категории.</p>
+          <p className="text-[1vw] text-[#888] text-center">There are no orders for this category.</p>
         )}
       </div>
     </div>

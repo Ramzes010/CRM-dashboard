@@ -13,7 +13,7 @@ const miniBoxes = 90;
 const dashboard = () => {
 
   const data = {
-    labels: ['Стандартные коробки', 'Мини-коробки'],
+    labels: ['Standard boxes', 'Mini boxes'],
     datasets: [
       {
         data: [standardBoxes, miniBoxes],
@@ -33,6 +33,10 @@ const dashboard = () => {
     },
   };
 
+  const showAlert = () => {
+    alert("The button is muted. The page is being developed!");
+  };
+
     return (
       <div>
         <Header/>
@@ -40,28 +44,28 @@ const dashboard = () => {
       <div className="flex flex-col gap-[56px] items-start self-stretch shrink-0 flex-nowrap relative">
         <div className="flex flex-col gap-[44px] items-center self-stretch shrink-0 flex-nowrap relative z-[1]">
           <span className="h-[60px] self-stretch shrink-0 basis-auto font-['NAMU'] text-[56px] font-light leading-[60px] text-[#fff] relative text-center whitespace-nowrap z-[2]">
-            Дашборд
+          Dashboard
           </span>
           <div className="flex w-[757px] gap-[16px] items-start shrink-0 flex-nowrap relative z-[3]">
           <div className="flex w-[561px] gap-[12px] justify-center items-start shrink-0 flex-wrap relative z-[4]">
-  <button className="flex w-[114px] pt-[14px] pr-[24px] pb-[14px] pl-[24px] gap-[6px] justify-center items-center flex-nowrap bg-[#fff] rounded-full border-none relative z-[5] pointer hover:bg-[#f0f0f0] active:bg-[#e0e0e0] transition-all duration-300">
+  <button  onClick={showAlert} className="flex w-[114px] pt-[14px] pr-[24px] pb-[14px] pl-[24px] gap-[6px] justify-center items-center flex-nowrap bg-[#fff] rounded-full border-none relative z-[5] pointer hover:bg-[#f0f0f0] active:bg-[#e0e0e0] transition-all duration-300">
     <span className="h-[20px] shrink-0 basis-auto text-[16px] font-medium leading-[20px] text-[#003c46] relative text-left whitespace-nowrap z-[6]">
-      Сегодня
+      Today
     </span>
   </button>
-  <button className="flex w-[100px] pt-[14px] pr-[24px] pb-[14px] pl-[24px] gap-[6px] justify-center items-center flex-nowrap rounded-full border-solid border border-[rgba(255,255,255,0.12)] relative z-[7] pointer hover:bg-[rgba(255,255,255,0.08)] active:bg-[rgba(255,255,255,0.16)] transition-all duration-300">
+  <button  onClick={showAlert} className="flex w-[100px] pt-[14px] pr-[24px] pb-[14px] pl-[24px] gap-[6px] justify-center items-center flex-nowrap rounded-full border-solid border border-[rgba(255,255,255,0.12)] relative z-[7] pointer hover:bg-[rgba(255,255,255,0.08)] active:bg-[rgba(255,255,255,0.16)] transition-all duration-300">
     <span className="h-[20px] shrink-0 basis-auto text-[16px] font-medium leading-[20px] text-[#fff] relative text-left whitespace-nowrap z-[8]">
-      7 дней
+      7 days
     </span>
   </button>
-  <button className="flex w-[111px] pt-[14px] pr-[24px] pb-[14px] pl-[24px] gap-[6px] justify-center items-center flex-nowrap rounded-full border-solid border border-[rgba(255,255,255,0.12)] relative z-[9] pointer hover:bg-[rgba(255,255,255,0.08)] active:bg-[rgba(255,255,255,0.16)] transition-all duration-300">
+  <button  onClick={showAlert} className="flex w-[111px] pt-[14px] pr-[24px] pb-[14px] pl-[24px] gap-[6px] justify-center items-center flex-nowrap rounded-full border-solid border border-[rgba(255,255,255,0.12)] relative z-[9] pointer hover:bg-[rgba(255,255,255,0.08)] active:bg-[rgba(255,255,255,0.16)] transition-all duration-300">
     <span className="h-[20px] shrink-0 basis-auto text-[16px] font-medium leading-[20px] text-[#fff] relative text-left whitespace-nowrap z-10">
-      30 дней
+      30 days
     </span>
   </button>
-  <button className="flex w-[200px] pt-[14px] pr-[24px] pb-[14px] pl-[24px] gap-[6px] justify-center items-center flex-nowrap rounded-full border-solid border border-[rgba(255,255,255,0.12)] relative z-[11] pointer hover:bg-[rgba(255,255,255,0.08)] active:bg-[rgba(255,255,255,0.16)] transition-all duration-300">
+  <button  onClick={showAlert} className="flex w-[200px] pt-[14px] pr-[24px] pb-[14px] pl-[24px] gap-[6px] justify-center items-center flex-nowrap rounded-full border-solid border border-[rgba(255,255,255,0.12)] relative z-[11] pointer hover:bg-[rgba(255,255,255,0.08)] active:bg-[rgba(255,255,255,0.16)] transition-all duration-300">
     <span className="h-[20px] shrink-0 basis-auto text-[16px] font-medium leading-[20px] text-[#fff] relative text-left whitespace-nowrap z-[12]">
-      Выбрать период
+    Select a period
     </span>
     <div className="flex w-[16px] flex-col justify-center items-center shrink-0 flex-nowrap relative overflow-hidden z-[13]">
       <div className="w-[16px] h-[16px] shrink-0 bg-cover bg-no-repeat relative top-[.1vw] overflow-hidden z-[14] bg-[url('/images/calendar-icon.svg')]" />
@@ -72,8 +76,8 @@ const dashboard = () => {
             <div className="w-px self-stretch shrink-0  bg-cover bg-no-repeat relative z-[15]" />
             <button className="flex w-[163px] gap-[12px] justify-center items-start shrink-0 flex-wrap border-none relative z-[16] pointer">
               <div className="flex w-[163px] pt-[14px] pr-[24px] pb-[14px] pl-[24px] gap-[6px] justify-center items-center flex-nowrap bg-[#fff] rounded-full relative z-[17]">
-                <span className="h-[20px] shrink-0 basis-auto  text-[16px] font-medium leading-[20px] text-[#003c46] relative text-left whitespace-nowrap z-[18]">
-                  Все районы
+                <span  onClick={showAlert} className="h-[20px] shrink-0 basis-auto  text-[16px] font-medium leading-[20px] text-[#003c46] relative text-left whitespace-nowrap z-[18]">
+                All districtsы
                 </span>
                 <div className="flex w-[16px] flex-col justify-center items-center shrink-0 flex-nowrap relative overflow-hidden z-[19]">
                   <div className="w-[16px] h-[16px] shrink-0  bg-cover bg-no-repeat relative top-[.1vw] overflow-hidden z-20 bg-[url('/images/calendar2-icon.svg')]" />
@@ -84,13 +88,13 @@ const dashboard = () => {
         </div>
         <div className="flex flex-col gap-[24px] items-start self-stretch shrink-0 flex-nowrap relative z-[21]">
           <span className="h-[28px] self-stretch shrink-0 basis-auto  text-[24px] font-medium leading-[28px] text-[#fff] relative text-left whitespace-nowrap z-[22]">
-            Овервью
+          The overview
           </span>
           <div className="flex gap-[12px] items-start self-stretch shrink-0 flex-nowrap relative z-[23]">
             <div className="flex w-[962px] gap-[12px] items-center shrink-0 flex-wrap relative z-[24]">
               <div className="flex w-[312px] pt-[16px] pr-[24px] pb-[24px] pl-[24px] flex-col gap-[32px] items-start flex-nowrap bg-[rgba(255,255,255,0.08)] rounded-[12px] relative z-[25]">
                 <span className="h-[20px] self-stretch shrink-0 basis-auto  text-[15px] font-[460] leading-[20px] text-[rgba(255,255,255,0.6)] tracking-[0.2px] relative text-left uppercase whitespace-nowrap z-[26]">
-                  кол-во заказов
+                number of orders
                 </span>
                 <div className="flex flex-col gap-[12px] items-start self-stretch shrink-0 flex-nowrap relative z-[27]">
                   <span className="h-[44px] self-stretch shrink-0 basis-auto font-['NAMU'] text-[40px] font-light leading-[44px] text-[#fff] relative text-left whitespace-nowrap z-[28]">
@@ -101,14 +105,14 @@ const dashboard = () => {
                       <img src="./images/Greenwrapper.svg" alt="3"  className="mt-[.2vw]"/>
                     </div>
                     <span className="h-[20px] grow shrink-0 basis-auto  text-[14px] font-[450] leading-[20px] text-[#fff] relative text-left whitespace-nowrap z-[32]">
-                      На 17 заказов больше, чем вчера
+                    17 more orders than yesterday
                     </span>
                   </div>
                 </div>
               </div>
               <div className="flex w-[312px] pt-[16px] pr-[24px] pb-[24px] pl-[24px] flex-col gap-[32px] items-start flex-nowrap bg-[rgba(255,255,255,0.08)] rounded-[12px] relative z-[49]">
                 <span className="h-[20px] self-stretch shrink-0 basis-auto  text-[15px] font-[460] leading-[20px] text-[rgba(255,255,255,0.6)] tracking-[0.2px] relative text-left uppercase whitespace-nowrap z-50">
-                  сред время приема заказа
+                average order acceptance time
                 </span>
                 <div className="flex flex-col gap-[12px] items-start self-stretch shrink-0 flex-nowrap relative z-[51]">
                   <span className="h-[44px] self-stretch shrink-0 basis-auto font-['NAMU'] text-[40px] font-light leading-[44px] text-[#fff] relative text-left whitespace-nowrap z-[52]">
@@ -119,23 +123,23 @@ const dashboard = () => {
                     <img src="./images/Greenwrapper.svg" alt="3"  className="mt-[.2vw]"/>
                     </div>
                     <span className="h-[20px] grow shrink-0 basis-auto  text-[14px] font-[450] leading-[20px] text-[#fff] relative text-left whitespace-nowrap z-[56]">
-                      На 2 мин быстрее, чем вчера
+                    2 min faster than yesterday
                     </span>
                   </div>
                 </div>
               </div>
               <div className="flex w-[312px] pt-[16px] pr-[24px] pb-[24px] pl-[24px] flex-col gap-[32px] items-start flex-nowrap bg-[rgba(255,255,255,0.08)] rounded-[12px] relative z-[33]">
                 <span className="h-[20px] self-stretch shrink-0 basis-auto  text-[15px] font-[460] leading-[20px] text-[rgba(255,255,255,0.6)] tracking-[0.2px] relative text-left uppercase whitespace-nowrap z-[34]">
-                  доход
+                income
                 </span>
                 <div className="flex flex-col gap-[12px] items-start self-stretch shrink-0 flex-nowrap relative z-[35]">
                   <div className="w-[264px] self-stretch shrink-0 font-['NAMU'] text-[40px] font-light leading-[44px] relative text-left whitespace-nowrap z-[36]">
                     <span className=" text-[40px] font-light leading-[44px] text-[rgba(255,255,255,0.6)] relative text-left">
-                      ₽
+                      $
                     </span>
                     <span className="font-['NAMU'] text-[40px] font-light leading-[44px] text-[#fff] relative text-left">
                       {" "}
-                      763 560
+                      763
                     </span>
                   </div>
                   <div className="flex gap-[4px] justify-center items-center self-stretch shrink-0 flex-nowrap relative z-[37]">
@@ -143,14 +147,14 @@ const dashboard = () => {
                     <img src="./images/Greenwrapper.svg" alt="3"  className="mt-[.2vw]"/>
                     </div>
                     <span className="h-[20px] grow shrink-0 basis-auto  text-[14px] font-[450] leading-[20px] text-[#fff] relative text-left whitespace-nowrap z-40">
-                      На 118 050 ₽ больше, чем вчера
+                    540 $ more than yesterday
                     </span>
                   </div>
                 </div>
               </div>
               <div className="flex w-[312px] pt-[16px] pr-[24px] pb-[24px] pl-[24px] flex-col gap-[32px] items-start flex-nowrap bg-[rgba(255,255,255,0.08)] rounded-[12px] relative z-[57]">
                 <span className="h-[20px] self-stretch shrink-0 basis-auto  text-[15px] font-[460] leading-[20px] text-[rgba(255,255,255,0.6)] tracking-[0.2px] relative text-left uppercase whitespace-nowrap z-[58]">
-                  сред время крафта
+                Average crafting time
                 </span>
                 <div className="flex flex-col gap-[12px] items-start self-stretch shrink-0 flex-nowrap relative z-[59]">
                   <span className="h-[44px] shrink-0 basis-auto font-['NAMU'] text-[40px] font-light leading-[44px] text-[#fff] relative text-left whitespace-nowrap z-[60]">
@@ -161,23 +165,23 @@ const dashboard = () => {
                     <img src="./images/Greenwrapper.svg" alt="3"  className="mt-[.2vw]"/>
                     </div>
                     <span className="h-[20px] grow shrink-0 basis-auto  text-[14px] font-[450] leading-[20px] text-[#fff] relative text-left whitespace-nowrap z-[64]">
-                      На 2 мин быстрее, чем вчера
+                    2 min faster than yesterday
                     </span>
                   </div>
                 </div>
               </div>
               <div className="flex w-[312px] pt-[16px] pr-[24px] pb-[24px] pl-[24px] flex-col gap-[32px] items-start flex-nowrap bg-[rgba(255,255,255,0.08)] rounded-[12px] relative z-[41]">
                 <span className="h-[20px] self-stretch shrink-0 basis-auto  text-[15px] font-[460] leading-[20px] text-[rgba(255,255,255,0.6)] tracking-[0.2px] relative text-left uppercase whitespace-nowrap z-[42]">
-                  Средний чек
+                Average receipt
                 </span>
                 <div className="flex flex-col gap-[12px] items-start self-stretch shrink-0 flex-nowrap relative z-[43]">
                   <div className="w-[264px] self-stretch shrink-0 font-['NAMU'] text-[40px] font-light leading-[44px] relative text-left whitespace-nowrap z-[44]">
                     <span className=" text-[40px] font-light leading-[44px] text-[rgba(255,255,255,0.6)] relative text-left">
-                      ₽
+                      $
                     </span>
                     <span className="font-['NAMU'] text-[40px] font-light leading-[44px] text-[#fff] relative text-left">
                       {" "}
-                      2 560
+                      25
                     </span>
                   </div>
                   <div className="flex gap-[4px] justify-center items-center self-stretch shrink-0 flex-nowrap relative z-[45]">
@@ -185,14 +189,14 @@ const dashboard = () => {
                     <img src="./images/Redwrapper.svg" alt="3"  className="mt-[0vw]"/>
                     </div>
                     <span className="h-[20px] grow shrink-0 basis-auto text-[14px] font-[450] leading-[20px] text-[#fff] relative text-left whitespace-nowrap z-[48]">
-                      На 350 ₽ меньше, чем вчера
+                    $3.5 less than yesterday
                     </span>
                   </div>
                 </div>
               </div>
               <div className="flex w-[312px] pt-[16px] pr-[24px] pb-[24px] pl-[24px] flex-col gap-[32px] items-start flex-nowrap bg-[rgba(255,255,255,0.08)] rounded-[12px] relative z-[65]">
                 <span className="h-[20px] self-stretch shrink-0 basis-auto text-[15px] font-[460] leading-[20px] text-[rgba(255,255,255,0.6)] tracking-[0.2px] relative text-left uppercase whitespace-nowrap z-[66]">
-                  сред время доставки
+                average delivery time
                 </span>
                 <div className="flex flex-col gap-[12px] items-start self-stretch shrink-0 flex-nowrap relative z-[67]">
                   <span className="h-[44px] self-stretch shrink-0 basis-auto font-['NAMU'] text-[40px] font-light leading-[44px] text-[#fff] relative text-left whitespace-nowrap z-[68]">
@@ -203,7 +207,7 @@ const dashboard = () => {
                     <img src="./images/Greenwrapper.svg" alt="3"  className="mt-[.2vw]"/>
                     </div>
                     <span className="h-[20px] grow shrink-0 basis-auto  text-[14px] font-[450] leading-[20px] text-[#fff] relative text-left whitespace-nowrap z-[72]">
-                      На 4 мин быстрее, чем вчера
+                    4 min faster than yesterday
                     </span>
                   </div>
                 </div>
@@ -211,7 +215,7 @@ const dashboard = () => {
             </div>
             <div className="flex w-[375px] pt-[16px] pr-[24px] pb-[24px] pl-[24px] flex-col justify-between items-center self-stretch shrink-0 flex-nowrap bg-[rgba(255,255,255,0.08)] rounded-[12px] relative z-[73]">
               <span className="h-[20px] self-stretch shrink-0 basis-auto  text-[15px] font-[460] leading-[20px] text-[rgba(255,255,255,0.6)] tracking-[0.2px] relative text-left uppercase whitespace-nowrap z-[74]">
-                Продажи коробок
+              Box Sales
               </span>
               <div className="h-[187px] self-stretch shrink-0 relative z-[75]">
                 <div className="w-[187px] h-full absolute top-0 left-1/2 translate-x-[-50%] translate-y-0 z-[76]">
@@ -260,7 +264,7 @@ const dashboard = () => {
                     <div className="w-px h-px bg-cover bg-no-repeat relative z-[92] mt-[8px] mr-0 mb-0 ml-[8px]" />
                   </div>
                   <span className="h-[20px] shrink-0 basis-auto  text-[14px] font-[450] leading-[20px] text-[#fff] relative text-left whitespace-nowrap z-[93]">
-                    Стандарт
+                  Standard
                   </span>
                 </div>
                 <div className="flex w-[82px] gap-[2px] items-center shrink-0 flex-nowrap relative overflow-hidden z-[94]">
@@ -268,7 +272,7 @@ const dashboard = () => {
                     <div className="w-px h-px bg-cover bg-no-repeat relative z-[96] mt-[8px] mr-0 mb-0 ml-[8px]" />
                   </div>
                   <span className="h-[20px] shrink-0 basis-auto  text-[14px] font-[450] leading-[20px] text-[#fff] relative text-left whitespace-nowrap z-[97]">
-                    Премиум
+                  Premium
                   </span>
                 </div>
                 <div className="flex w-[112px] gap-[2px] items-center shrink-0 flex-nowrap relative overflow-hidden z-[98]">
@@ -276,7 +280,7 @@ const dashboard = () => {
                     <div className="w-px h-px bg-cover bg-no-repeat relative z-[100] mt-[8px] mr-0 mb-0 ml-[8px]" />
                   </div>
                   <span className="h-[20px] shrink-0 basis-auto  text-[14px] font-[450] leading-[20px] text-[#fff] relative text-left whitespace-nowrap z-[101]">
-                    Мини Пичени
+                  Mini Picheny
                   </span>
                 </div>
               </div>
@@ -285,7 +289,7 @@ const dashboard = () => {
         </div>
         <div className="flex flex-col gap-[24px] items-start self-stretch shrink-0 flex-nowrap relative z-[102]">
           <span className="h-[28px] self-stretch shrink-0 basis-auto  text-[24px] font-medium leading-[28px] text-[#fff] relative text-left whitespace-nowrap z-[103]">
-            Популярные вкусы
+          Popular tastes
           </span>
           <div className="flex w-[1352px] h-[560px] pt-[8px] pr-[8px] pb-[8px] pl-[8px] flex-col items-start shrink-0 flex-nowrap relative z-[104]">
             <div className="flex flex-col gap-[-2px] items-start self-stretch grow shrink-0 basis-0 flex-nowrap relative z-[105]">
@@ -413,37 +417,36 @@ const dashboard = () => {
               <div className="flex pt-0 pr-0 pb-[8px] pl-[29px] items-start self-stretch shrink-0 flex-nowrap relative z-[172]">
                 <div className="flex flex-col items-end grow shrink-0 basis-0 flex-nowrap relative z-[173]">
                   <span className="h-[16px] self-stretch shrink-0 basis-auto text-[12px] font-[460] leading-[16px] text-[#fff] tracking-[0.2px] relative text-center uppercase whitespace-nowrap z-[174]">
-                    Эдем
+                  Edem
                   </span>
                 </div>
                 <div className="flex flex-col items-end grow shrink-0 basis-0 flex-nowrap relative z-[175]">
                   <span className="h-[16px] self-stretch shrink-0 basis-auto text-[12px] font-[460] leading-[16px] text-[#fff] tracking-[0.2px] relative text-center uppercase whitespace-nowrap z-[176]">
-                    Млечный путь
+                  The Milky Way
                   </span>
                 </div>
                 <div className="flex flex-col items-end grow shrink-0 basis-0 flex-nowrap relative z-[177]">
                   <span className="h-[16px] self-stretch shrink-0 basis-auto text-[12px] font-[460] leading-[16px] text-[#fff] tracking-[0.2px] relative text-center uppercase whitespace-nowrap z-[178]">
-                    Шок
+                  Shock
                   </span>
                 </div>
                 <div className="flex flex-col items-end grow shrink-0 basis-0 flex-nowrap relative z-[179]">
                   <span className="h-[16px] self-stretch shrink-0 basis-auto text-[12px] font-[460] leading-[16px] text-[#fff] tracking-[0.2px] relative text-center uppercase whitespace-nowrap z-[180]">
-                    Динозавр
+                  Dinosaur
                   </span>
                 </div>
                 <div className="flex flex-col items-end grow shrink-0 basis-0 flex-nowrap relative z-[181]">
                   <span className="h-[16px] self-stretch shrink-0 basis-auto text-[12px] font-[460] leading-[16px] text-[#fff] tracking-[0.2px] relative text-center uppercase whitespace-nowrap z-[182]">
-                    Дюна
+                  Dune
                   </span>
                 </div>
                 <div className="flex flex-col items-end grow shrink-0 basis-0 flex-nowrap relative z-[183]">
                   <span className="h-[16px] self-stretch shrink-0 basis-auto text-[12px] font-[460] leading-[16px] text-[#fff] tracking-[0.2px] relative text-center uppercase whitespace-nowrap z-[184]">
-                    Красный закат
-                  </span>
+                  Red Sunset                  </span>
                 </div>
                 <div className="flex flex-col items-end grow shrink-0 basis-0 flex-nowrap relative z-[185]">
                   <span className="h-[16px] self-stretch shrink-0 basis-auto text-[12px] font-[460] leading-[16px] text-[#fff] tracking-[0.2px] relative text-center uppercase whitespace-nowrap z-[186]">
-                    Клубничное облако
+                  Strawberry Cloud
                   </span>
                 </div>
                 <div className="flex flex-col items-end grow shrink-0 basis-0 flex-nowrap relative z-[187]">
@@ -466,23 +469,23 @@ const dashboard = () => {
           <div className="flex flex-col gap-[24px] items-start self-stretch shrink-0 flex-nowrap relative z-[198]">
             <div className="flex justify-between items-center self-stretch shrink-0 flex-nowrap relative z-[199]">
               <span className="h-[28px] grow shrink-0 basis-auto  text-[24px] font-medium leading-[28px] text-[#fff] relative text-left whitespace-nowrap z-[200]">
-                Производительность команды
+              Team performance
               </span>
             </div>
             <div className="flex gap-[8px] items-center self-stretch shrink-0 flex-wrap relative z-[201]">
-              <button className="flex w-[61px] pt-[8px] pr-[16px] pb-[8px] pl-[16px] gap-[6px] justify-center items-center flex-nowrap bg-[#fff] rounded-full border-none relative z-[202] pointer">
+              <button  className="flex w-[61px] pt-[8px] pr-[16px] pb-[8px] pl-[16px] gap-[6px] justify-center items-center flex-nowrap bg-[#fff] rounded-full border-none relative z-[202] pointer">
                 <span className="h-[20px] shrink-0 basis-auto  text-[16px] font-medium leading-[20px] text-[#003c46] relative text-left whitespace-nowrap z-[203]">
-                  Все
+                  All
                 </span>
               </button>
-              <button className="flex w-[121px] pt-[8px] pr-[16px] pb-[8px] pl-[16px] gap-[6px] justify-center items-center flex-nowrap rounded-full border-solid border border-[rgba(255,255,255,0.12)] relative z-[204] pointer">
+              <button  onClick={showAlert} className="flex w-[121px] pt-[8px] pr-[16px] pb-[8px] pl-[16px] gap-[6px] justify-center items-center flex-nowrap rounded-full border-solid border border-[rgba(255,255,255,0.12)] relative z-[204] pointer">
                 <span className="h-[20px]  shrink-0 basis-auto  text-[16px] font-medium leading-[20px] text-[#fff] relative text-left whitespace-nowrap z-[205]">
-                  Кондитеры
+                Pastry chefs
                 </span>
               </button>
-              <button className="flex w-[102px] pt-[8px] pr-[16px] pb-[8px] pl-[16px] gap-[6px] justify-center items-center flex-nowrap rounded-full border-solid border border-[rgba(255,255,255,0.12)] relative z-[206] pointer">
-                <span className="h-[20px] shrink-0 basis-auto  text-[16px] font-medium leading-[20px] text-[#fff] relative text-left whitespace-nowrap z-[207]">
-                  Курьеры
+              <button  onClick={showAlert} className="flex w-[102px] pt-[8px] pr-[16px] pb-[8px] pl-[16px] gap-[6px] justify-center items-center flex-nowrap rounded-full border-solid border border-[rgba(255,255,255,0.12)] relative z-[206] pointer">
+                <span  onClick={showAlert} className="h-[20px] shrink-0 basis-auto  text-[16px] font-medium leading-[20px] text-[#fff] relative text-left whitespace-nowrap z-[207]">
+                Couriers
                 </span>
               </button>
             </div>
@@ -490,36 +493,36 @@ const dashboard = () => {
           <div className="main-container flex w-[1352px] pt-[12px] pr-[16px] pb-[12px] pl-[16px] flex-col gap-[4px] items-start flex-nowrap bg-[rgba(255,255,255,0.08)] rounded-[12px] relative mx-auto my-0">
       <div className="flex pt-[4px] pr-[12px] pb-[4px] pl-[12px] gap-[16px] items-start self-stretch shrink-0 flex-nowrap relative">
         <span className="h-[20px] grow shrink-0 basis-autoS text-[15px] font-[460] leading-[20px] text-[rgba(255,255,255,0.6)] tracking-[0.2px] relative text-left uppercase whitespace-nowrap z-[1]">
-          Район
+        District
         </span>
         <span className="h-[20px] grow shrink-0 basis-autoS text-[15px] font-[460] leading-[20px] text-[rgba(255,255,255,0.6)] tracking-[0.2px] relative text-left uppercase whitespace-nowrap z-[2]">
-          Имя
+          Name
         </span>
         <span className="h-[20px] grow shrink-0 basis-autoS text-[15px] font-[460] leading-[20px] text-[rgba(255,255,255,0.6)] tracking-[0.2px] relative text-left uppercase whitespace-nowrap z-[3]">
-          Роль
+          Role
         </span>
         <span className="h-[20px] grow shrink-0 basis-autoS text-[15px] font-[460] leading-[20px] text-[rgba(255,255,255,0.6)] tracking-[0.2px] relative text-left uppercase overflow-hidden whitespace-nowrap z-[4]">
-          Кол-во заказов
+        Number of orders
         </span>
         <span className="h-[20px]  shrink-0 basis-autoS text-[15px] font-[460] leading-[20px] text-[rgba(255,255,255,0.6)] tracking-[0.2px] relative text-left uppercase whitespace-nowrap z-[5]">
-          Сред время выполнения
+        Average lead time
         </span>
         <div className="w-[120px] h-[20px] shrink-0 relative overflow-hidden z-[6]" />
       </div>
       <div className="flex pt-[12px] pr-[12px] pb-[12px] pl-[12px] gap-[16px] items-center shrink-0 flex-nowrap relative z-[7]">
         <span className="h-[28px] mr-[40px] grow shrink-0 basis-autoS text-[19px] font-[450] leading-[28px] text-[#fff] relative text-left overflow-hidden whitespace-nowrap z-[8]">
-          Байсангуровский
+        Baysangurovsky
         </span>
         <div className="flex gap-[12px] justify-center items-center grow shrink-0 basis-0 flex-nowrap relative z-[9]">
           <div className="w-[32px] h-[32px] shrink-0 rounded-[98.4px] relative overflow-hidden z-10">
             <div className="w-[32px] h-[32px] bg-[url(/images/Avatar.svg)] bg-[length:100%_100%] bg-no-repeat relative z-[11] mt-0 mr-0 mb-0 ml-0" />
           </div>
           <span className="h-[28px] mr-[50px] grow shrink-0 basis-autoS text-[19px] font-[450] leading-[28px] text-[#fff] relative text-left overflow-hidden whitespace-nowrap z-[12]">
-            Мадина Р
+          Madina R
           </span>
         </div>
         <span className="h-[28px] mr-[100px] grow shrink-0 basis-autoS text-[19px] font-[450] leading-[28px] text-[#fff] relative text-left overflow-hidden whitespace-nowrap z-[13]">
-          Кондитер
+        Confectioner
         </span>
         <span className="h-[28px] mr-[270px] grow shrink-0 basis-autoS text-[19px] font-[450] leading-[28px] text-[#fff] relative text-left overflow-hidden whitespace-nowrap z-[14]">
           33
@@ -537,18 +540,18 @@ const dashboard = () => {
       </div>
       <div className="flex pt-[12px] pr-[12px] pb-[12px] pl-[12px] gap-[16px] items-center  shrink-0 flex-nowrap relative z-20">
         <span className="h-[28px] mr-[40px] grow shrink-0 basis-autoS text-[19px] font-[450] leading-[28px] text-[#fff] relative text-left overflow-hidden whitespace-nowrap z-[21]">
-          Байсангуровский
+        Baysangurovsky
         </span>
         <div className="flex gap-[12px] justify-center items-center grow shrink-0 basis-0 flex-nowrap relative z-[22]">
           <div className="w-[32px] h-[32px] shrink-0 rounded-[98.4px] relative overflow-hidden z-[23]">
             <div className="w-[32px] h-[32px] bg-[url(/images/Avatar.svg)] bg-[length:100%_100%] bg-no-repeat relative z-[24] mt-0 mr-0 mb-0 ml-0" />
           </div>
           <span className="h-[28px] mr-[50px] grow shrink-0 basis-autoS text-[19px] font-[450] leading-[28px] text-[#fff] relative text-left overflow-hidden whitespace-nowrap z-[25]">
-            Мадина Р
+          Madina R
           </span>
         </div>
         <span className="h-[28px] mr-[100px] grow shrink-0 basis-autoS text-[19px] font-[450] leading-[28px] text-[#fff] relative text-left overflow-hidden whitespace-nowrap z-[26]">
-          Кондитер
+        Confectioner
         </span>
         <span className="h-[28px] mr-[270px] grow shrink-0 basis-autoS text-[19px] font-[450] leading-[28px] text-[#fff] relative text-left overflow-hidden whitespace-nowrap z-[27]">
           33
@@ -567,27 +570,27 @@ const dashboard = () => {
     </div>
           <div className="flex pt-[8px] pr-0 pb-[8px] pl-0 flex-col gap-[10px] items-start self-stretch shrink-0 flex-nowrap relative z-[346]">
             <div className="flex w-[192px] gap-[8px] items-center shrink-0 flex-nowrap relative z-[347]">
-              <button className="flex w-[32px] h-[32px] pt-[8px] pr-[4px] pb-[8px] pl-[4px] flex-col justify-center items-center shrink-0 flex-nowrap bg-[#fff] rounded-full border-none relative z-[348] pointer">
+              <button  onClick={showAlert} className="flex w-[32px] h-[32px] pt-[8px] pr-[4px] pb-[8px] pl-[4px] flex-col justify-center items-center shrink-0 flex-nowrap bg-[#fff] rounded-full border-none relative z-[348] pointer">
                 <span className="h-[20px] self-stretch shrink-0 basis-auto text-[16px] font-medium leading-[20px] text-[#003c46] relative text-center whitespace-nowrap z-[349]">
                   1
                 </span>
               </button>
-              <button className="flex w-[32px] h-[32px] pt-[8px] pr-[4px] pb-[8px] pl-[4px] flex-col gap-[10px] justify-center items-center shrink-0 flex-nowrap rounded-full border-solid border border-[rgba(255,255,255,0.12)] relative z-[350] pointer">
+              <button  onClick={showAlert} className="flex w-[32px] h-[32px] pt-[8px] pr-[4px] pb-[8px] pl-[4px] flex-col gap-[10px] justify-center items-center shrink-0 flex-nowrap rounded-full border-solid border border-[rgba(255,255,255,0.12)] relative z-[350] pointer">
                 <span className="h-[20px] self-stretch shrink-0 basis-auto text-[16px] font-medium leading-[20px] text-[#fff] relative text-center whitespace-nowrap z-[351]">
                   2
                 </span>
               </button>
-              <div className="flex w-[32px] h-[32px] pt-[8px] pr-[4px] pb-[8px] pl-[4px] flex-col gap-[10px] justify-center items-center shrink-0 flex-nowrap rounded-full border-solid border border-[rgba(255,255,255,0.12)] relative z-[352]">
+              <div  onClick={showAlert} className="flex w-[32px] h-[32px] pt-[8px] pr-[4px] pb-[8px] pl-[4px] flex-col gap-[10px] justify-center items-center shrink-0 flex-nowrap rounded-full border-solid border border-[rgba(255,255,255,0.12)] relative z-[352]">
                 <span className="h-[20px] self-stretch shrink-0 basis-auto text-[16px] font-medium leading-[20px] text-[#fff] relative text-center whitespace-nowrap z-[353]">
                   3
                 </span>
               </div>
-              <div className="flex w-[32px] h-[32px] pt-[8px] pr-[4px] pb-[8px] pl-[4px] flex-col gap-[10px] justify-center items-center shrink-0 flex-nowrap rounded-full border-solid border border-[rgba(255,255,255,0.12)] relative z-[354]">
+              <div  onClick={showAlert} className="flex w-[32px] h-[32px] pt-[8px] pr-[4px] pb-[8px] pl-[4px] flex-col gap-[10px] justify-center items-center shrink-0 flex-nowrap rounded-full border-solid border border-[rgba(255,255,255,0.12)] relative z-[354]">
                 <span className="h-[20px] self-stretch shrink-0 basis-auto text-[16px] font-medium leading-[20px] text-[#fff] relative text-center whitespace-nowrap z-[355]">
                   4
                 </span>
               </div>
-              <div className="flex w-[32px] h-[32px] pt-[8px] pr-[4px] pb-[8px] pl-[4px] flex-col gap-[10px] justify-center items-center shrink-0 flex-nowrap rounded-full border-solid border border-[rgba(255,255,255,0.12)] relative z-[356]">
+              <div  onClick={showAlert} className="flex w-[32px] h-[32px] pt-[8px] pr-[4px] pb-[8px] pl-[4px] flex-col gap-[10px] justify-center items-center shrink-0 flex-nowrap rounded-full border-solid border border-[rgba(255,255,255,0.12)] relative z-[356]">
                 <span className="h-[20px] self-stretch shrink-0 basis-auto text-[16px] font-medium leading-[20px] text-[#fff] relative text-center whitespace-nowrap z-[357]">
                   5
                 </span>
@@ -598,18 +601,18 @@ const dashboard = () => {
       </div>
       <div className="flex pt-[20px] pr-0 pb-[20px] pl-0 justify-between items-center self-stretch shrink-0 flex-nowrap rounded-tl-none rounded-tr-none rounded-br-[12px] rounded-bl-[12px] relative z-[358]">
         <div className="flex w-[316px] gap-[16px] items-center shrink-0 flex-nowrap relative z-[359]">
-          <span className="h-[16px] shrink-0 basis-auto text-[12px] font-[460] leading-[16px] text-[rgba(255,255,255,0.45)] tracking-[0.2px] relative text-left uppercase whitespace-nowrap z-[360]">
+          <span  onClick={showAlert} className="h-[16px] shrink-0 basis-auto text-[12px] font-[460] leading-[16px] text-[rgba(255,255,255,0.45)] tracking-[0.2px] relative text-left uppercase whitespace-nowrap z-[360]">
             Picheni © 2024
           </span>
           <div className="w-px self-stretch shrink-0 bg- bg-cover bg-no-repeat relative z-[361]" />
-          <span className="h-[16px] shrink-0 basis-auto text-[12px] font-[460] leading-[16px] text-[rgba(255,255,255,0.6)] tracking-[0.2px] relative text-left uppercase whitespace-nowrap z-[362]">
+          <span  onClick={showAlert} className="h-[16px] shrink-0 basis-auto text-[12px] font-[460] leading-[16px] text-[rgba(255,255,255,0.6)] tracking-[0.2px] relative text-left uppercase whitespace-nowrap z-[362]">
             terms
           </span>
-          <span className="h-[16px] shrink-0 basis-auto text-[12px] font-[460] leading-[16px] text-[rgba(255,255,255,0.6)] tracking-[0.2px] relative text-left uppercase whitespace-nowrap z-[363]">
+          <span  onClick={showAlert} className="h-[16px] shrink-0 basis-auto text-[12px] font-[460] leading-[16px] text-[rgba(255,255,255,0.6)] tracking-[0.2px] relative text-left uppercase whitespace-nowrap z-[363]">
             privacy
           </span>
-          <span className="h-[16px] shrink-0 basis-auto text-[12px] font-[460] leading-[16px] text-[rgba(255,255,255,0.6)] tracking-[0.2px] relative text-left uppercase whitespace-nowrap z-[364]">
-            Помощь
+          <span  onClick={showAlert} className="h-[16px] shrink-0 basis-auto text-[12px] font-[460] leading-[16px] text-[rgba(255,255,255,0.6)] tracking-[0.2px] relative text-left uppercase whitespace-nowrap z-[364]">
+            help
           </span>
         </div>
         <div className="flex w-[76px] gap-[12px] items-start shrink-0 flex-nowrap relative z-[365]">
