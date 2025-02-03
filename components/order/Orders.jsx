@@ -71,11 +71,12 @@ export default function Main() {
     return orders.filter((order) => order.category === categoryId).length;
   };
 
-  const filteredOrders =
-    activeCategory === "all"
-      ? orders
-      : orders.filter((order) => order.category === activeCategory);
+  const filteredOrders = React.useMemo(() => {
+    if (activeCategory === "all") return orders;
+    return orders.filter((order) => order.category === activeCategory);
+  }, [activeCategory, orders]);
 
+  
   return (
     <div>
       {/* Навигация по категориям */}
@@ -100,7 +101,7 @@ export default function Main() {
       </div>
 
       {/* Заказы */}
-      <div className="orders-container mt-[2vw] p-[2vw] rounded-lg flex justify-around flex-wrap">
+      <div className={`orders-container mt-[2vw] p-[2vw] rounded-lg flex  flex-wrap gap-[2vw] ${filteredOrders.length <= 2 ? "justify-start" : "justify-around"}`}>
         {loading ? (
           <p className="text-[1vw] text-[#888] text-center">Загрузка заказов...</p>
         ) : filteredOrders.length > 0 ? (
