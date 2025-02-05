@@ -43,7 +43,7 @@ const dashboard = () => {
       <div className="main-container flex w-[1440px] pt-[72px] pr-[44px] pb-0 pl-[44px] flex-col gap-[120px] items-center flex-nowrap bg-[#003c46] rounded-tl-[24px] rounded-tr-[24px] rounded-br-none rounded-bl-none relative mx-auto my-0">
       <div className="flex flex-col gap-[56px] items-start self-stretch shrink-0 flex-nowrap relative">
         <div className="flex flex-col gap-[44px] items-center self-stretch shrink-0 flex-nowrap relative z-[1]">
-          <span className="h-[60px] self-stretch shrink-0 basis-auto font-['NAMU'] text-[56px] font-light leading-[60px] text-[#fff] relative text-center whitespace-nowrap z-[2]">
+          <span className="h-[60px] self-stretch shrink-0 basis-auto text-[56px] font-light leading-[60px] text-[#fff] relative text-center whitespace-nowrap z-[2]">
           Dashboard
           </span>
           <div className="flex w-[757px] gap-[16px] items-start shrink-0 flex-nowrap relative z-[3]">
