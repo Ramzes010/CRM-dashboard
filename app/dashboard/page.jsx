@@ -77,7 +77,7 @@ const dashboard = () => {
             <button className="flex w-[163px] gap-[12px] justify-center items-start shrink-0 flex-wrap border-none relative z-[16] pointer">
               <div className="flex w-[163px] pt-[14px] pr-[24px] pb-[14px] pl-[24px] gap-[6px] justify-center items-center flex-nowrap bg-[#fff] rounded-full relative z-[17]">
                 <span  onClick={showAlert} className="h-[20px] shrink-0 basis-auto  text-[16px] font-medium leading-[20px] text-[#003c46] relative text-left whitespace-nowrap z-[18]">
-                All districtsы
+                All districts
                 </span>
                 <div className="flex w-[16px] flex-col justify-center items-center shrink-0 flex-nowrap relative overflow-hidden z-[19]">
                   <div className="w-[16px] h-[16px] shrink-0  bg-cover bg-no-repeat relative top-[.1vw] overflow-hidden z-20 bg-[url('/images/calendar2-icon.svg')]" />

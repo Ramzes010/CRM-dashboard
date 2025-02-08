@@ -127,7 +127,7 @@ export default function Main() {
                 </div>
                 <button className="flex w-[10.278vw] pt-[0.556vw] pr-[0.833vw] pb-[0.556vw] pl-[0.833vw] gap-[0.556vw] items-center shrink-0 flex-nowrap bg-[rgba(255,255,255,0.12)] rounded-[0.556vw] border-none relative overflow-hidden z-[7] pointer">
                   <div className="flex w-[1.667vw] flex-col justify-center items-center shrink-0 flex-nowrap relative overflow-hidden z-[8]">
-                    <div className="w-[1.667vw] h-[1.667vw] shrink-0 bg-[url(/path-to-icon)] bg-cover bg-no-repeat relative overflow-hidden z-[9]" />
+                    <div className="w-[1.667vw] h-[1.667vw] shrink-0 bg-[url(/images/IconWrapper.svg)] bg-cover bg-no-repeat relative overflow-hidden z-[9]" />
                   </div>
                   <div className="flex w-[6.389vw] gap-[0.278vw] items-center shrink-0 flex-nowrap relative z-10">
                     <span className="h-[1.667vw] shrink-0 basis-auto font-['Golos_Text'] text-[1.111vw] font-medium leading-[1.667vw] text-[#fff] relative text-left whitespace-nowrap z-[11]">
