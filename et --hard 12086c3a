@@ -1,0 +1,358 @@
+[33ma9100263[m[33m ([m[1;36mHEAD -> [m[1;32mproduction[m[33m, [m[1;31morigin/production[m[33m)[m Мелкие правки
+[33m12086c3a[m Мелкие правки
+[33m611afb5b[m fix баг
+[33m1075d5ca[m убрали асинхрирование из бота тг
+[33m1d7e90bc[m изменен получатель заявок фрнашизы на aliev@picheni.com
+[33me4a3ff99[m удалены лишние представления и пути из бекенд
+[33m187a1cbe[m добавил два вкуса Фрезье и Фисташио
+[33mbe2a1c97[m добавил два вкуса Фрезье и Фисташио
+[33md0cee828[m добавил два вкуса Фрезье и Фисташио
+[33m7cd731d1[m update for eden to edem
+[33m31f586f9[m обновленные фотки + знак доллара
+[33m54fef222[m добаавил письма для отправителся
+[33m54d1130c[m добаавил письма для отправителся
+[33m32e83fb9[m добаавил письма для отправителся
+[33me8139c77[m добаавил письма для отправителся
+[33m74521c6d[m добаавил письма для отправителся
+[33md12f3f77[m добаавил письма для отправителся
+[33m122c5a9f[m добаавил письма для отправителся
+[33m4dcca7d2[m добаавил письма для отправителся
+[33m75d27709[m add gmail
+[33m69664b54[m add gmail
+[33me9be88f7[m add gmail
+[33mded4805c[m add gmail
+[33ma00deb5a[m add gmail
+[33m7b8c2fa3[m add gmail
+[33m8bb45455[m add gmail
+[33mf133fb9c[m add gmail
+[33mc31a0fbd[m add gmail
+[33m67d0cbbd[m add gmail
+[33m7a0e6e34[m add gmail
+[33ma83707ae[m add gmail
+[33md8f9fc89[m add gmail
+[33md0cacf0d[m add gmail
+[33m00e301ee[m add gmail
+[33ma51a8703[m add gmail
+[33m5a5d922a[m add requirements
+[33md3608603[m Track boxIcon.svg with LFS
+[33mf5bca20c[m Track boxIcon.svg with LFS
+[33m5afc8d95[m Track boxIcon.svg with LFS
+[33m8f78a6bb[m Обновление фронтенд
+[33m68a920bb[m добавление отправки писем в почту
+[33m9e0083ea[m добавление отправки писем в почту
+[33m19641464[m Тест
+[33m3029fb7c[m Тест
+[33m042a4db8[m добавление отправки писем в почту
+[33m027ef14a[m[33m ([m[1;31morigin/MR-33[m[33m, [m[1;32mMR-33[m[33m)[m Create tatus
+[33m33f48670[m Create tatus
+[33m06d8c85a[m //
+[33m83c64a01[m //
+[33m9ae074ba[m воссоздание телеграм бота
+[33m1ac55b71[m воссоздание телеграм бота
+[33m828b6454[m воссоздание телеграм бота
+[33me9a94fd8[m воссоздание телеграм бота
+[33m57f0f82a[m воссоздание телеграм бота
+[33m45bd446d[m поменял aiogram на telebot
+[33m0814003a[m добавление окружения
+[33mb4c2d4bb[m добавление окружения
+[33mcd8049d7[m добавление окружения
+[33m8a1cb026[m убрал валидность номера из сериализатора
+[33m4318f8ca[m убрал валидность номера из сериализатора
+[33m8b04b43c[m front
+[33m7693e329[m front
+[33m1d297a81[m front
+[33m4391e618[m front
+[33mef7374d2[m ...
+[33md37199ff[m ...
+[33m08555f75[m front
+[33m48e1481e[m front
+[33mc0d335d3[m front
+[33m665b774d[m front
+[33mfd82db36[m front
+[33m177f1ec9[m front
+[33m782d94f4[m front
+[33me2478b87[m front
+[33m5d8fc682[m front
+[33m3b2c41de[m front
+[33mfe5c1715[m front
+[33m94c5ba96[m front
+[33m0a12f365[m front
+[33m19474044[m front
+[33m48e7b1fc[m front
+[33m804ac071[m front
+[33ma7d6e19c[m front
+[33mdc5e2490[m front
+[33m4ae9dccc[m front
+[33mf9d0bf24[m front
+[33mf4fed116[m front
+[33meb2337da[m front
+[33m74140ce5[m //
+[33mab66e355[m //
+[33m05e30aea[m front
+[33m3ce6ef6b[m front
+[33mf32f67c5[m front
+[33m3ee479b3[m front
+[33m5205f05e[m front
+[33mb9c37e1b[m ..
+[33mde7a9e71[m ..
+[33m2af2fa70[m update nginx
+[33m6ded8f34[m change frontend
+[33m4a9abae4[m change frontend
+[33m9c50083a[m change frontend
+[33mba891a9b[m fix frontend
+[33m7bcbd7e5[m fix frontend
+[33me503b2c6[m change frontend
+[33m0cefc8c0[m change frontend
+[33m53bc60fd[m Merge branch 'production' of github.com:Xamerzaev/Picheni into production
+[33mc40c2a6f[m change rubles on dollars
+[33mbc30e066[m Merge branch 'production' of github.com:Xamerzaev/Picheni into production
+[33m861b487a[m frontend
+[33m49753dcb[m  Dashboard
+[33m38e96ccb[m  Dashboard
+[33m382191d7[m Merge branch 'production' of github.com:Xamerzaev/Picheni into production
+[33m30aeeafb[m перевод на англ
+[33m0d2c230e[m Merge branch 'production' of github.com:Xamerzaev/Picheni into production
+[33mfda92c90[m дополнение фронтенд
+[33m9ada1126[m Добавил правила игнорирования больших файлов
+[33m4defe1cb[m Добавил правила игнорирования больших файлов
+[33m0193ead5[m Удалил лишние файлы из репозитория
+[33m00b9be07[m Удалил лишние файлы из репозитория
+[33m3c8fb921[m Update .gitignore
+[33me52c1ee4[m Update .gitignore
+[33m9a7468a6[m )
+[33m3a87e341[m )
+[33m23fd7519[m Merge branch 'production' of github.com:Xamerzaev/Picheni into production
+[33mf2d34362[m test
+[33m3548c859[m изменения с языком
+[33mb9c57d86[m исправил бекенд
+[33m6d71d270[m Merge branch 'production' of github.com:Xamerzaev/Picheni into production
+[33mb4179975[m исправил бекенд
+[33ma5d59833[m Merge branch 'production' of github.com:Xamerzaev/Picheni into production
+[33m1e5ff891[m изменения с языком
+[33m4826f5b8[m Merge branch 'production' of github.com:Xamerzaev/Picheni into production
+[33mfaca5c82[m изменения с языком
+[33md65d5cf9[m Merge branch 'production' of github.com:Xamerzaev/Picheni into production
+[33m36205ba9[m test
+[33m22967bf2[m изменения с языком
+[33m450c4a33[m error correction frontend
+[33mbf876d89[m errors correction frontend
+[33mde177d4f[m ...
+[33m99e19dd2[m test
+[33md7a61eda[m endpoint frontend
+[33mfdb56440[m Merge branch 'production' of https://github.com/Xamerzaev/Picheni into production
+[33m9e7a1cb0[m endpoint frontend
+[33mee22c319[m .
+[33mbb311000[m .
+[33m02d8d3cf[m ///
+[33meb407a3a[m ///
+[33mb87633dc[m Merge branch 'production' of github.com:Xamerzaev/Picheni into production
+[33m4381b895[m test
+[33m7198623c[m test
+[33mc6257cb8[m Тест
+[33meb2b44a8[m Тест
+[33m05e1d00f[m Тест
+[33m9fbb430d[m Тест
+[33ma37931c7[m ///
+[33m337b5606[m ///
+[33mffb1967c[m Merge branch 'production' of github.com:Xamerzaev/Picheni into production
+[33mf5f8e8dd[m error correction on frontend
+[33m47635c22[m error correction on frontend
+[33m5cdffce2[m ...
+[33mf14a557d[m ...
+[33m2e74d47d[m ...
+[33mf365d62b[m ...
+[33m529ad415[m Merge branch 'production' of github.com:Xamerzaev/Picheni into production
+[33m1363c840[m test deploy
+[33m389a16f6[m test deploy
+[33m35ca2843[m ...
+[33mb9ad6229[m ...
+[33m238a94fc[m Merge branch 'production' of github.com:Xamerzaev/Picheni into production
+[33m75f501d8[m test deploy
+[33m78398a88[m test deploy
+[33mc28e7d90[m ...
+[33mf279b7a5[m ...
+[33m4b73c1fb[m ююю
+[33mff3fe77b[m ююю
+[33md436011a[m Merge branch 'production' of github.com:Xamerzaev/Picheni into production
+[33m89a9e6b9[m test deploy
+[33maa30f674[m test deploy
+[33m74ffb6d2[m test deploy
+[33m4a5f7574[m ююю
+[33mf25fceab[m ююю
+[33m6c200335[m end
+[33m286a5333[m end
+[33m907714e9[m Merge branch 'feature/MR-32' of https://github.com/Xamerzaev/Picheni into production
+[33ma5a3ab99[m Merge branch 'production' of https://github.com/Xamerzaev/Picheni into production
+[33m251ba922[m Update .cache_rwhcbr
+[33mdf11bb97[m Update .cache_rwhcbr
+[33ma44e2949[m Обновлен пользовательский сайт
+[33m6d911333[m Обновлен пользовательский сайт
+[33m1f97a509[m ...
+[33me28b1421[m ...\
+[33m9ef663d5[m ...
+[33m0aeac18f[m ...
+[33m9e5ead5b[m ...
+[33mda76c7ed[m ...
+[33mfb8f7d19[m Test
+[33m58faf006[m ...
+[33mbd0c1ddc[m ...
+[33ma7009f2e[m ..
+[33mcf934a25[m ...
+[33m8a11c945[m[33m ([m[1;31morigin/feature/MR-32[m[33m, [m[1;32mfeature/MR-32[m[33m)[m ...
+[33md819b8e7[m ...
+[33m8d9fcf8b[m Test
+[33mbc477b60[m ...
+[33mbd6ace59[m ...
+[33ma4953ba5[m ;..\
+[33mc19214ed[m ...
+[33m62da90d3[m ...
+[33m801344b6[m ...
+[33mc796497b[m ..
+[33m84aef3d2[m Update trace
+[33m0c48f591[m ...
+[33m323e61e5[m ...
+[33m8ca795e0[m feat(MR-32)-endpoint backend
+[33m8e80a1f6[m ...
+[33m6ab67e77[m ...
+[33mfc3cfc67[m ...
+[33mdfd7b291[m ...
+[33m2b793ddb[m ...
+[33m6e4df46b[m ...
+[33m2de5db7d[m Update SectionDescription.jsx
+[33m5fd41660[m[33m ([m[1;31morigin/feature/MR-31[m[33m, [m[1;32mfeature/MR-31[m[33m)[m feat(31)-Эндпоинт бекенд
+[33mbd1011d9[m Удален выбор коробки
+[33mdbaccbb6[m feat(31)-Эндпоинт бекенд
+[33md4004db8[m мелкая кастомизация
+[33m1aa86023[m Тип коробки.
+[33m621e4d0c[m Замена панельки на крорбку
+[33me2b77004[m ...
+[33m54dee290[m поправка сетки
+[33m14fac13a[m Замена цвет фона у контейнера на коробку
+[33m2ac19445[m   /
+[33m672fbcff[m npm install
+[33m55b4870a[m Update Dockerfile
+[33ma3b54ba9[m Update Dockerfile
+[33ma2f36dd3[m npm run build
+[33mde572e42[m Заглушка для страницы заказа
+[33m20fa4edd[m 123
+[33m93aa8b86[m Созданы модели | представления | сериализаторы страниц проекта
+[33med3c9b1c[m Созданы модели | представления | сериализаторы страниц проекта
+[33m35b384de[m Полная исправка кода, докера, запуск на локалхост, исправлен нгинкс
+[33m76f775c8[m Merge branch 'production' of https://github.com/Xamerzaev/Picheni into production
+[33m182e6d99[m Рефакторинг кода. Починка докера.
+[33ma76a4b95[m Merge branch 'production' into feature/MR-21
+[33mbdb074dd[m добавила сжатые картинки 2
+[33m5e88a3a3[m Update models.py
+[33m1a2b5f26[m Update models.py
+[33m6fe4dad2[m Merge branch 'production' of https://github.com/Xamerzaev/Picheni into production
+[33mebcec52b[m сжатие фоток
+[33m93225817[m Merge branch 'production' into feature/MR-21
+[33m5be65cd4[m добавила сжатые картинки
+[33mbe5291c1[m Update models.py
+[33mc02cf2b2[m Update models.py
+[33m78664073[m Update models.py
+[33m9db33db0[m Update serializers.py
+[33m8b980a46[m изменения в CheckBoxs
+[33m18815111[m добавила маску в форму
+[33mcfd7242e[m изменения
+[33m2c2b32e6[m Update models.py
+[33mda17ed7a[m Merge branch 'production' of https://github.com/Xamerzaev/Picheni into production
+[33m89d22e71[m исправление валидации номера
+[33m8aeacd56[m Merge branch 'production' into feature/MR-21
+[33m9b47cc0a[m добавлена почта
+[33m2994ceff[m add media to urls
+[33mc3937c73[m add media to urls
+[33m309479c3[m add media to urls
+[33mc62a6caf[m add media to urls
+[33mabe3bb07[m add media to urls
+[33m75c19b50[m add media to urls
+[33m2b0fcdb8[m add media to urls
+[33mfa3a38f1[m add media to urls
+[33m2f42487a[m add media to urls
+[33m01d40072[m add media to urls
+[33mf8cb70c1[m add media to urls
+[33m8bde9445[m add media to urls
+[33mbf730785[m add media to urls
+[33m35497098[m Update views.py
+[33md4ce51fc[m Подправлен формат заказа 2
+[33mc8e6d0ac[m Merge branch 'production' into feature/MR-21
+[33md41b09e5[m Подправлен формат заказа
+[33m7f28131f[m changed static
+[33mf43c4bf1[m Merge branch 'production' into feature/MR-21
+[33mc7c40add[m Линк с франшизы
+[33m708186b2[m Ховеры, видео
+[33m6eab1c82[m мелкие правки 3
+[33mf93c14ba[m Merge branch 'production' of https://github.com/Xamerzaev/Picheni into production
+[33mddd67070[m Доработка тг бота
+[33m614b57f7[m host modified
+[33m1a1c4a58[m host modified
+[33m52f64231[m host modified
+[33m7f994393[m host modified
+[33mb7728fa8[m host modified
+[33m12f53ce8[m host modified
+[33mc4af27db[m host modified
+[33mb352e7d4[m host modified
+[33mb64f6752[m host modified
+[33mba8dbd21[m host modified
+[33m9b362476[m host modified
+[33m6467e545[m host modified
+[33m56395219[m host modified
+[33m3bc5e0dd[m мелкие правки 2
+[33m53e59af7[m Merge remote-tracking branch 'origin/production' into feature/MR-21
+[33m4453cdb3[m мелкие правки
+[33mcd3b22b9[m max size ngninx more
+[33m65330dc6[m добавила перевод
+[33m948d8cd1[m allowed hosts add
+[33m64030ba7[m allowed hosts add
+[33me6de62bd[m allowed hosts add
+[33mb996d6b4[m allowed hosts add
+[33m96b69bfa[m allowed hosts add
+[33md7b0dce3[m csrf trusted
+[33m344f9839[m allowed hosts add
+[33m12290fda[m lобавил админку в нгинкс
+[33medfc24d5[m lобавил админку в нгинкс
+[33med6dafbb[m lобавил админку в нгинкс
+[33me0fa0b02[m lобавил админку в нгинкс
+[33m70f150b3[m lобавил админку в нгинкс
+[33m20b73099[m lобавил админку в нгинкс
+[33m2b2cfbfc[m lобавил админку в нгинкс
+[33md3f409e5[m lобавил админку в нгинкс
+[33ma06b5b6b[m lобавил админку в нгинкс
+[33m22f12851[m lобавил админку в нгинкс
+[33m454a2f88[m[33m ([m[1;31morigin/bugfix/mr-27[m[33m)[m nginx исправлен
+[33m25d7a504[m верстка 7
+[33mb7ce9ec5[m слайд
+[33m8eb28a8e[m стрелки назад
+[33m5558cfd4[m полная верстка cart
+[33mb7856bb2[m Merge remote-tracking branch 'origin/bugfix/mr-27' into feature/MR-21
+[33mbecf0530[m верстка 6
+[33mf8d25efc[m bf/mr-27
+[33m7fb104a9[m верстка 5
+[33mbbfc95e7[m Удалила временный адрес АПИ
+[33m3cadc204[m Верстка 4
+[33m0b63268a[m Верстка OrderAccepted 3
+[33m98843357[m Верстка OrderAccepted 2
+[33m7514d2af[m Верстка OrderAccepted
+[33m9e67727e[m Верстка
+[33m4a063022[m Логика #4
+[33m84cea916[m Логика #3
+[33m4f5d4891[m Merge remote-tracking branch 'origin/feature/MR-24' into feature/MR-21
+[33m1778bbd9[m[33m ([m[1;31morigin/feature/MR-24[m[33m)[m feat(MR-24) - создать админку jazzmin + починить корзину
+[33m303af30e[m Логика #2
+[33mca5dbfee[m[33m ([m[1;31morigin/bugfix/mr-26[m[33m)[m bf/mr-26
+[33mcfb259aa[m bf/mr-26
+[33m917e5b9f[m[33m ([m[1;31morigin/bugfix/mr-25[m[33m, [m[1;32mbugfix/mr-25[m[33m)[m Bugfix/mr-25
+[33m164cb5a2[m Merge remote-tracking branch 'origin/feature/MR-24' into feature/MR-21
+[33m1ffcbae5[m Логика
+[33m6192f4ad[m верстка Checkout
+[33m829012d5[m верстка Checkout
+[33m94358863[m feat(MR-24) - создать админку jazzmin + починить корзину
+[33m04ea0e3c[m верстка Cart
+[33m5656f22b[m верстка EmptyCart
+[33mf6871910[m верстка cart
+[33m7ee1e496[m адаптация
+[33m4d437643[m корзина
+[33m3bee07c3[m созданы компоненты корзины
+[33m50a3458d[m[33m ([m[1;31morigin/feature/MR-23[m[33m)[m feat(MR-23) - сделать рефакторинг кода
+[33ma3855fb0[m[33m ([m[1;31morigin/feature/MR-22[m[33m)[m feat(MR-22)- Создать докер проекта с nginx
+[33ma0c212fd[m[33m ([m[1;31morigin/feature/MR-20[m[33m)[m feat(MR-20)- Реализовать тг-бо

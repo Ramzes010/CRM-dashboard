@@ -1,41 +1,67 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.env
+*.venv
+*.egg
+*.egg-info
+dist/
+build/
+*.log
+*.pot
+*.mo
+*.log
+*.db
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+# Django specific
+*.env  # Виртуальные окружения и переменные окружения
+db.sqlite3  # База данных SQLite, если используется
+/static/
+media/
 
-# testing
-/coverage
+# Migrations
+**/migrations/
 
-# next.js
-/.next/
-/out/
+# MyPy
+.mypy_cache/
 
-# production
-/build
+# Pytest
+.cache/
 
-# misc
+# Venv
+venv/
+env/
+ENV/
+
+# Coverage reports
+htmlcov/
+.coverage
+.tox/
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# macOS
 .DS_Store
-*.pem
 
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
+# Docker
+docker-compose.override.yml
 
-# env files (can opt-in for committing if needed)
-.env*
+# Игнорировать папку node_modules
+node_modules/
+public/images/boxIcon.svg
 
-# vercel
-.vercel
+# Игнорировать папку сборки .next
+.next/
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# Игнорировать любые .rar файлы
+*.rar

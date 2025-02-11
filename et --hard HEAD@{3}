@@ -1,0 +1,115 @@
+[33m44090d16[m[33m ([m[1;36mHEAD[m[33m)[m HEAD@{0}: pull origin main --rebase (pick): fix - убран TypeScript
+[33m9c9c3938[m HEAD@{1}: pull origin main --rebase (pick): chore - мелочь по деплою
+[33m8bc69bf2[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{2}: pull origin main --rebase (start): checkout 8bc69bf2db6880745ffdaf96b1ec9f3574aa495f
+[33md1baadf0[m[33m ([m[1;32mMR-33[m[33m)[m HEAD@{3}: commit: Dashboard
+[33mc829eefa[m HEAD@{4}: commit: Добавил правила игнорирования больших файлов
+[33m1a0c584a[m HEAD@{5}: commit: Удалил лишние файлы из репозитория
+[33m13e9e00f[m HEAD@{6}: commit: Update .gitignore
+[33mb481923a[m HEAD@{7}: commit: )
+[33m7422dd18[m HEAD@{8}: checkout: moving from MR-33 to MR-33
+[33m7422dd18[m HEAD@{9}: checkout: moving from production to MR-33
+[33m48f2eedd[m[33m ([m[1;32mproduction[m[33m)[m HEAD@{10}: reset: moving to HEAD
+[33m48f2eedd[m[33m ([m[1;32mproduction[m[33m)[m HEAD@{11}: commit: ...
+[33m65934d12[m HEAD@{12}: commit: .
+[33m435d2d94[m HEAD@{13}: commit (merge): .
+[33m84f402c4[m HEAD@{14}: checkout: moving from MR-33 to production
+[33m7422dd18[m HEAD@{15}: commit: ///
+[33m6c927390[m HEAD@{16}: checkout: moving from MR-33 to MR-33
+[33m6c927390[m HEAD@{17}: checkout: moving from production to MR-33
+[33m84f402c4[m HEAD@{18}: commit (merge): test
+[33md1f6e78b[m HEAD@{19}: checkout: moving from MR-33 to production
+[33m6c927390[m HEAD@{20}: commit: Resolved merge conflicts
+[33m145a7184[m HEAD@{21}: commit: Create frontend.rar
+[33m65a7e728[m HEAD@{22}: commit (merge): Тест
+[33m95056e4e[m HEAD@{23}: commit: Тест
+[33mad479ad1[m HEAD@{24}: commit: ///
+[33m66fe9426[m HEAD@{25}: commit: ...
+[33ma9777c40[m HEAD@{26}: commit: ...
+[33m08a7d42f[m HEAD@{27}: commit: ...
+[33md3501c39[m HEAD@{28}: commit: ...
+[33m4c23a5e9[m HEAD@{29}: commit: ююю
+[33m7cf03efd[m HEAD@{30}: commit: ююю
+[33m28e457b1[m HEAD@{31}: commit: Delete next-swc.win32-x64-msvc.node
+[33mb50a5893[m HEAD@{32}: commit: Update .cache_rwhcbr
+[33mf76c85c1[m HEAD@{33}: commit: Обновлен пользовательский сайт
+[33md9058b2d[m HEAD@{34}: commit: ...
+[33m0be70321[m HEAD@{35}: commit: ...\
+[33mc0a2b033[m HEAD@{36}: commit: ...
+[33m5278e8c2[m HEAD@{37}: commit: ...
+[33md3327996[m HEAD@{38}: commit: ...
+[33mcf63c479[m[33m ([m[1;32mfeature/MR-32[m[33m)[m HEAD@{39}: checkout: moving from production to MR-33
+[33md1f6e78b[m HEAD@{40}: commit: ...
+[33m8350a3e2[m HEAD@{41}: commit: Test
+[33m449c0f09[m HEAD@{42}: pull --ff --recurse-submodules --progress origin: Fast-forward
+[33ma4d8baf7[m HEAD@{43}: reset: moving to HEAD~1
+[33m62f2575a[m HEAD@{44}: reset: moving to HEAD~1
+[33md725f2e0[m HEAD@{45}: reset: moving to HEAD~1
+[33m02328a19[m HEAD@{46}: reset: moving to HEAD~1
+[33m638bdd48[m HEAD@{47}: reset: moving to HEAD~1
+[33m5106559f[m HEAD@{48}: reset: moving to HEAD~1
+[33m5ca7db49[m HEAD@{49}: reset: moving to HEAD~1
+[33m6a15da2c[m HEAD@{50}: reset: moving to HEAD~1
+[33m449c0f09[m HEAD@{51}: pull --ff --recurse-submodules --progress origin: Fast-forward
+[33m638bdd48[m HEAD@{52}: reset: moving to HEAD~1
+[33m5106559f[m HEAD@{53}: reset: moving to HEAD~1
+[33m5ca7db49[m HEAD@{54}: reset: moving to HEAD~1
+[33m6a15da2c[m HEAD@{55}: reset: moving to HEAD~1
+[33m449c0f09[m HEAD@{56}: pull --ff --recurse-submodules --progress origin: Fast-forward
+[33m6a15da2c[m HEAD@{57}: reset: moving to HEAD~1
+[33m449c0f09[m HEAD@{58}: commit: ...
+[33m6a15da2c[m HEAD@{59}: commit: ...
+[33m5ca7db49[m HEAD@{60}: commit: ..
+[33m5106559f[m HEAD@{61}: commit: ...
+[33m638bdd48[m HEAD@{62}: checkout: moving from MR-33 to production
+[33mcf63c479[m[33m ([m[1;32mfeature/MR-32[m[33m)[m HEAD@{63}: reset: moving to HEAD
+[33mcf63c479[m[33m ([m[1;32mfeature/MR-32[m[33m)[m HEAD@{64}: checkout: moving from feature/MR-32 to MR-33
+[33mcf63c479[m[33m ([m[1;32mfeature/MR-32[m[33m)[m HEAD@{65}: checkout: moving from feature/MR-32 to feature/MR-32
+[33mcf63c479[m[33m ([m[1;32mfeature/MR-32[m[33m)[m HEAD@{66}: commit: ...
+[33m1edcaab2[m HEAD@{67}: commit: ...
+[33m581ec98c[m[33m ([m[1;31morigin/feature/MR-32[m[33m)[m HEAD@{68}: checkout: moving from production to feature/MR-32
+[33m638bdd48[m HEAD@{69}: commit: Test
+[33m02328a19[m HEAD@{70}: commit: ...
+[33md725f2e0[m HEAD@{71}: commit: ...
+[33m62f2575a[m HEAD@{72}: commit: ;..\
+[33ma4d8baf7[m HEAD@{73}: commit: ...
+[33m2b2f7cbd[m HEAD@{74}: commit: ...
+[33ma79fcb5f[m HEAD@{75}: commit: ...
+[33m7551c224[m HEAD@{76}: commit: ..
+[33mf8d61d9a[m HEAD@{77}: commit: Update trace
+[33mc4a2f3c0[m HEAD@{78}: commit: ...
+[33mfff571b8[m HEAD@{79}: checkout: moving from feature/MR-32 to production
+[33m581ec98c[m[33m ([m[1;31morigin/feature/MR-32[m[33m)[m HEAD@{80}: reset: moving to HEAD
+[33m581ec98c[m[33m ([m[1;31morigin/feature/MR-32[m[33m)[m HEAD@{81}: checkout: moving from production to feature/MR-32
+[33mfff571b8[m HEAD@{82}: commit: ...
+[33m8178f5b6[m HEAD@{83}: commit: ...
+[33m7affb563[m HEAD@{84}: commit: ...
+[33meb04e3e1[m HEAD@{85}: commit: ...
+[33m9480d4cb[m HEAD@{86}: commit: ...
+[33m5dd6c973[m HEAD@{87}: commit: ...
+[33m47fbb627[m HEAD@{88}: commit: ...
+[33mf0d113da[m HEAD@{89}: checkout: moving from feature/MR-31 to production
+[33m04f55361[m[33m ([m[1;31morigin/feature/MR-31[m[33m, [m[1;32mfeature/MR-31[m[33m)[m HEAD@{90}: checkout: moving from bugfix/mr-25 to feature/MR-31
+[33m917e5b9f[m[33m ([m[1;31morigin/bugfix/mr-25[m[33m, [m[1;32mbugfix/mr-25[m[33m)[m HEAD@{91}: checkout: moving from production to bugfix/mr-25
+[33mf0d113da[m HEAD@{92}: reset: moving to HEAD
+[33mf0d113da[m HEAD@{93}: commit: Update SectionDescription.jsx
+[33m1eb156e0[m HEAD@{94}: commit: Удален выбор коробки
+[33m81f66103[m HEAD@{95}: commit: мелкая кастомизация
+[33m5fbd96dd[m HEAD@{96}: commit: Тип коробки.
+[33mf952d219[m HEAD@{97}: commit: Замена панельки на крорбку
+[33mb2883e88[m HEAD@{98}: commit: ...
+[33m4261e0af[m HEAD@{99}: commit: поправка сетки
+[33mf785d27b[m HEAD@{100}: commit: Замена цвет фона у контейнера на коробку
+[33m95d3d161[m HEAD@{101}: commit: /
+[33mfe6d5a37[m HEAD@{102}: commit: npm install
+[33m4886fe2f[m HEAD@{103}: pull --ff --recurse-submodules --progress origin: Fast-forward
+[33mbb5d3276[m HEAD@{104}: commit: npm run build
+[33m38eedf2e[m HEAD@{105}: checkout: moving from production to production
+[33m38eedf2e[m HEAD@{106}: checkout: moving from bugfix/mr-25 to production
+[33m917e5b9f[m[33m ([m[1;31morigin/bugfix/mr-25[m[33m, [m[1;32mbugfix/mr-25[m[33m)[m HEAD@{107}: checkout: moving from production to bugfix/mr-25
+[33m38eedf2e[m HEAD@{108}: commit: Заглушка для страницы заказа
+[33mbaa91d51[m HEAD@{109}: commit: 123
+[33m6d44dc34[m[33m ([m[1;31morigin/feature/MR-21[m[33m)[m HEAD@{110}: checkout: moving from main to production
+[33m8bc69bf2[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{111}: checkout: moving from production to main
+[33m6d44dc34[m[33m ([m[1;31morigin/feature/MR-21[m[33m)[m HEAD@{112}: checkout: moving from main to production
+[33m8bc69bf2[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{113}: commit: Silenced the order page
+[33m02373fb0[m[33m ([m[1;31morigin/feature/MR-5[m[33m)[m HEAD@{114}: clone: from https://github.com/Xamerzaev/Picheni.git
