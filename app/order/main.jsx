@@ -20,15 +20,12 @@ export default function Main() {
     const fetchOrders = async () => {
       setLoading(true);
       try {
-        // Искусственные данные
-        const artificialOrders = [
-          { id: 1, number: 1, time: "18:50", date: "21 JAN 24", category: "akhmatovsky", categoryName: "Akhmatovsky", status: "New", timeLeft: "4:26", items: "×1 Premium, ×2 Standard" },
-          { id: 2, number: 2, time: "19:15", date: "21 JAN 24", category: "akhmatovsky", categoryName: "Akhmatovsky", status: "Ready", timeLeft: "0:00", items: "×2 Mini" },
-          { id: 3, number: 3, time: "19:30", date: "21 JAN 24", category: "sheikh_mansurovsky", categoryName: "Sheikh Mansurovsk", status: "Ready", timeLeft: "1:15", items: "×1 Premium, ×1 Mini" },
-        ];
-
-        await new Promise((resolve) => setTimeout(resolve, 1000)); // Имитация задержки
-        setOrders(artificialOrders);
+        const response = await fetch("http://localhost/api/orders/");
+        if (!response.ok) {
+          throw new Error("Failed to fetch orders");
+        }
+        const data = await response.json();
+        setOrders(data);
       } catch (error) {
         console.error("Error loading orders:", error);
       } finally {
