@@ -1,6 +1,6 @@
-import Header from '../components/header/Header';
-import CreateWorker from '../components/worker/CreateWorker';
-import Order from '../components/order/page';
+import Header from './header/Header';
+import CreateWorker from './worker/CreateWorker';
+import Order from './order/main';
 import Dashboard from './dashboard/page';
 
 export default function App({ Component, pageProps }) {
