@@ -9,18 +9,13 @@ export default function Main() {
   const [loading, setLoading] = useState(false);
   const router = useRouter(); // Используем роутер
 
-  const categories = [
-    { id: "all", name: "All districts" },
-    { id: "baisangurovsky", name: "Baisangurovsky" },
-    { id: "sheikh_mansurovsky", name: "Sheikh Mansurovsky" },
-    { id: "akhmatovsky", name: "Akhmatovsky" },
-  ];
+
 
   useEffect(() => {
     const fetchOrders = async () => {
       setLoading(true);
       try {
-        const response = await fetch("http://localhost/api/orders/");
+        const response = await fetch("http://127.0.0.1:8000/api/orders/");
         if (!response.ok) {
           throw new Error("Failed to fetch orders");
         }
@@ -86,7 +81,7 @@ export default function Main() {
                       {order.time}, {order.date}
                     </span>
                     <div className="flex flex-col gap-[0.833vw] items-start self-stretch shrink-0">
-                      <span className="text-[2.778vw] font-light leading-[3.056vw] text-[#fff]">№{order.number}</span>
+                      <span className="text-[2.778vw] font-light leading-[3.056vw] text-[#fff]">№{order.id}</span>
                       <span className="text-[1.319vw] font-medium leading-[1.944vw] text-[#fff]">{order.categoryName}</span>
                     </div>
                   </div>
