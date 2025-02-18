@@ -1,5 +1,5 @@
 import Header from './header/Header';
-import CreateWorker from './worker/CreateWorker';
+import CreateWorker from './worker/page';
 import Order from './order/main';
 import Dashboard from './dashboard/page';
 
