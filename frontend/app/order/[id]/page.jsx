@@ -10,10 +10,10 @@ export default function OrderDetails() {
   // 🔹 Демо-данные
   // const fakeOrders = [
   //   { 
-  //     id: 1, number: 1, time: "18:50", date: "January 21, 2024", 
-  //     category: "sheikh_mansurovsky", categoryName: "Sheikh Mansurovsky", 
+  //     id: 1, time: "18:50", date: "January 21, 2024", 
+  //     adress: "sheikh_mansurovsky", 
   //     status: "New", timeLeft: "4:26", 
-  //     items: "×1 Premium, ×2 Standard, ×1 Mini", 
+  //     content: "×1 Premium, ×2 Standard, ×1 Mini", 
   //     comment: "Put a note with the text: “Text text”",
   //     client: { name: "Ruslan X", phone: "8 928 902 99 99", address: "12 Leonova Lane, kv 42" }
   //   }

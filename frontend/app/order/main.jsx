@@ -1,26 +1,29 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation"; // Импорт роутера
-
 export default function Main() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(false);
   const router = useRouter(); // Используем роутер
-
-
-
+  const categories = [
+    { id: "all", name: "All districts" },
+    { id: "baisangurovsky", name: "Baisangurovsky" },
+    { id: "sheikh_mansurovsky", name: "Sheikh Mansurovsky" },
+    { id: "akhmatovsky", name: "Akhmatovsky" },
+  ];
   useEffect(() => {
     const fetchOrders = async () => {
       setLoading(true);
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/orders/");
-        if (!response.ok) {
-          throw new Error("Failed to fetch orders");
-        }
-        const data = await response.json();
-        setOrders(data);
+        // Искусственные данные
+        const artificialOrders = [
+          { id: 1, number: 1, time: "18:50", date: "21 JAN 24", category: "akhmatovsky", categoryName: "Akhmatovsky", status: "New", timeLeft: "4:26", items: "×1 Premium, ×2 Standard" },
+          { id: 2, number: 2, time: "19:15", date: "21 JAN 24", category: "akhmatovsky", categoryName: "Akhmatovsky", status: "Ready", timeLeft: "0:00", items: "×2 Mini" },
+          { id: 3, number: 3, time: "19:30", date: "21 JAN 24", category: "sheikh_mansurovsky", categoryName: "Sheikh Mansurovsk", status: "Ready", timeLeft: "1:15", items: "×1 Premium, ×1 Mini" },
+        ];
+        await new Promise((resolve) => setTimeout(resolve, 1000)); // Имитация задержки
+        setOrders(artificialOrders);
       } catch (error) {
         console.error("Error loading orders:", error);
       } finally {
@@ -29,17 +32,14 @@ export default function Main() {
     };
     fetchOrders();
   }, []);
-
   const getCategoryOrderCount = (categoryId) => {
     if (categoryId === "all") return orders.length;
     return orders.filter((order) => order.category === categoryId).length;
   };
-
   const filteredOrders = React.useMemo(() => {
     if (activeCategory === "all") return orders;
     return orders.filter((order) => order.category === activeCategory);
   }, [activeCategory, orders]);
-
   return (
     <div>
       {/* Навигация по категориям */}
@@ -62,7 +62,6 @@ export default function Main() {
           ))}
         </div>
       </div>
-
       {/* Заказы */}
       <div className={`orders-container mt-[2vw] p-[2vw] rounded-lg flex flex-wrap gap-[2vw] ${filteredOrders.length <= 2 ? "justify-start" : "justify-around"}`}>
         {loading ? (
@@ -81,7 +80,7 @@ export default function Main() {
                       {order.time}, {order.date}
                     </span>
                     <div className="flex flex-col gap-[0.833vw] items-start self-stretch shrink-0">
-                      <span className="text-[2.778vw] font-light leading-[3.056vw] text-[#fff]">№{order.id}</span>
+                      <span className="text-[2.778vw] font-light leading-[3.056vw] text-[#fff]">№{order.number}</span>
                       <span className="text-[1.319vw] font-medium leading-[1.944vw] text-[#fff]">{order.categoryName}</span>
                     </div>
                   </div>
