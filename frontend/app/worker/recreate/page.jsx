@@ -124,7 +124,7 @@ export default function CreateWorkerPage() {
               </div>
             </div>
 
-            <button className="mt-6 bg-[#53CFBA] text-[#003C46] px-6 py-3 rounded-lg text-lg" onClick={handleSubmit}>
+            <button className="mt-6 bg-[#53CFBA] text-[#003C46] px-6 py-3 rounded-lg text-lg mb-[8.333vw]" onClick={handleSubmit}>
               Сохранить
             </button>
           </div>

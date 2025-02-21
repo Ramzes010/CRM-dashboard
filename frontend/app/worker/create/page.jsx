@@ -8,12 +8,12 @@ export default function CreateWorkerPage() {
   const router = useRouter();
 
   const [role, setRole] = useState("confectioner");
-  const [district, setDistrict] = useState("sheikh_mansurovsky");
-  const [name, setName] = useState("");
+  const [district, setDistrict] = useState(1);
+  const [fullname, setName] = useState("");
   const [address, setAddress] = useState("");
-  const [phone, setPhone] = useState("+337 77 77 77 77");
+  const [phone_number, setPhone] = useState("+337 77 77 77 77");
   const [password, setPassword] = useState("");
-  const [telegramToken, setTelegramToken] = useState("");
+  const [telegram_token, setTelegramToken] = useState("");
 
   useEffect(() => {
     setTelegramToken(generateToken());
@@ -24,13 +24,13 @@ export default function CreateWorkerPage() {
   };
 
   const handleSubmit = async () => {
-    const workerData = { role, district, name, address, phone, password, telegramToken };
+    const workerData = { role, district, fullname, address, phone_number, password, telegram_token };
     try {
       const response = await fetch("http://localhost/api/profiles/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Token 6578881f25b133aa817d7d8bb6c2a07b90e4bcff`
+          "Authorization": `Token ec6c8fa65702a71ef99f61667c238b3fdb5eee34`
         },
         body: JSON.stringify(workerData),
       });
@@ -79,9 +79,9 @@ export default function CreateWorkerPage() {
             <h2 className="text-[1.667vw] text-white mb-[1.389vw]">Район работы</h2>
             <div className="flex w-[40.28vw] gap-[0.83vw] items-start flex-wrap relative mx-auto my-0 mb-[2.778vw]">
               {[
-                { id: "sheikh_mansurovsky", label: "Шейх Мансуровский", width: "14.79vw" },
-                { id: "baisangurovsky", label: "Байсангуровский", width: "13.13vw" },
-                { id: "akhmatovsky", label: "Ахматовский", width: "10.63vw" },
+                { id: 1, label: "Шейх Мансуровский", width: "14.79vw" },
+                { id: 2, label: "Байсангуровский", width: "13.13vw" },
+                { id: 3, label: "Ахматовский", width: "10.63vw" },
               ].map((d) => (
                 <button
                   key={d.id}
@@ -101,11 +101,11 @@ export default function CreateWorkerPage() {
               <span className="h-[1.94vw] self-stretch text-[1.67vw] font-medium leading-[1.94vw] text-[#fff]">Основная информация</span>
               <div className="flex flex-col items-start self-stretch rounded-[0.83vw] border border-[#1f535c] overflow-hidden">
                 {[
-                  { label: "Имя работника", value: name, setter: setName, placeholder: "Введите имя" },
+                  { label: "Имя работника", value: fullname, setter: setName, placeholder: "Введите имя" },
                   { label: "Адрес", value: address, setter: setAddress, placeholder: "Введите адрес" },
-                  { label: "Номер", value: phone, setter: setPhone, placeholder: "+337 77 77 77 77" },
+                  { label: "Номер", value: phone_number, setter: setPhone, placeholder: "+337 77 77 77 77" },
                   { label: "Пароль", value: password, setter: setPassword, placeholder: "Создайте пароль", type: "password" },
-                  { label: "Телеграм токен", value: telegramToken, setter: () => {}, placeholder: telegramToken, readOnly: true },
+                  { label: "Телеграм токен", value: telegram_token, setter: () => {}, placeholder: telegram_token, readOnly: true },
                 ].map((field, index) => (
                   <div key={index} className="flex py-[1.11vw] px-[1.67vw] gap-[0.83vw] items-center self-stretch border-t border-[#1f535c]">
                     <div className="flex flex-col gap-[0.56vw] items-start grow">
@@ -124,7 +124,7 @@ export default function CreateWorkerPage() {
               </div>
             </div>
 
-            <button className="mt-6 bg-[#53CFBA] text-[#003C46] px-6 py-3 rounded-lg text-lg" onClick={handleSubmit}>
+            <button className="mt-6 bg-[#53CFBA] text-[#003C46] px-6 py-3 rounded-lg text-lg mb-[8.333vw]" onClick={handleSubmit}>
               Создать
             </button>
           </div>

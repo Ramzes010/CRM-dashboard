@@ -26,25 +26,37 @@ export default function WorkersPage() {
     { id: "confectioners", name: "Кондитеры" },
   ];
 
-  useEffect(() => {
-    const fetchWorkers = async () => {
-      setLoading(true);
-      try {
-        const response = await fetch("http://localhost/api/workers/");
-        if (!response.ok) {
-          throw new Error("Failed to fetch workers");
-        }
-        const data = await response.json();
-        setWorkers(data);
-      } catch (error) {
-        console.error("Error loading workers:", error);
-      } finally {
-        setLoading(false);
-      }
+  const handleCreateWorker = async () => {
+    const newWorker = {
+      name: "Новый Работник",
+      district: activeDistrict === "all" ? "baisangurovsky" : activeDistrict,
+      role: activeRole === "all" ? "couriers" : activeRole,
+      phone: "+1234567890",
+      status: "Доступен",
     };
-    fetchWorkers();
-  }, []);
-
+  
+    try {
+      const response = await fetch("http://localhost/api/workers/", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Token ec6c8fa65702a71ef99f61667c238b3fdb5eee34`
+        },
+        body: JSON.stringify(newWorker),
+      });
+  
+      if (!response.ok) {
+        throw new Error("Failed to create worker");
+      }
+  
+      const createdWorker = await response.json();
+      setWorkers([...workers, createdWorker]);
+    } catch (error) {
+      console.error("Error creating worker:", error);
+    }
+  };
+  
+  
   const handleNavigation = (path) => {
     router.push(path); // Исправленный вызов handleNavigation
   };
