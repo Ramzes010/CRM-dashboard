@@ -53,7 +53,7 @@ export default function CreateWorkerPage() {
             <button className="mr-[6.667vw]" onClick={() => router.back()}>
               <img src="../../images/icons/iconButton.svg" alt="Назад" className="w-[3.056vw] h-[3.056vw]" />
             </button>
-            <h1 className="text-[3.889vw] leading-[4.167vw]">Создание <br/> работника</h1>
+            <h1 className="text-[3.889vw] leading-[4.167vw]">Обновление <br/> работника</h1>
           </div>
           <div>
             <h1 className="text-[1.667vw] text-white mb-[1.389vw]">Роль</h1>
@@ -105,7 +105,7 @@ export default function CreateWorkerPage() {
                   { label: "Адрес", value: address, setter: setAddress, placeholder: "Введите адрес" },
                   { label: "Номер", value: phone, setter: setPhone, placeholder: "+337 77 77 77 77" },
                   { label: "Пароль", value: password, setter: setPassword, placeholder: "Создайте пароль", type: "password" },
-                  { label: "Телеграм токен", value: telegramToken, setter: () => {}, placeholder: telegramToken, readOnly: true },
+                //   { label: "Телеграм токен", value: telegramToken, setter: () => {}, placeholder: telegramToken, readOnly: true },
                 ].map((field, index) => (
                   <div key={index} className="flex py-[1.11vw] px-[1.67vw] gap-[0.83vw] items-center self-stretch border-t border-[#1f535c]">
                     <div className="flex flex-col gap-[0.56vw] items-start grow">
@@ -125,7 +125,7 @@ export default function CreateWorkerPage() {
             </div>
 
             <button className="mt-6 bg-[#53CFBA] text-[#003C46] px-6 py-3 rounded-lg text-lg" onClick={handleSubmit}>
-              Создать
+              Сохранить
             </button>
           </div>
         </div>
