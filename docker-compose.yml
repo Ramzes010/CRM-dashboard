@@ -29,6 +29,7 @@ services:
     networks:           
       - ingress-routing
       
+      
 
     environment:
       - NEXT_PUBLIC_WEBPACK_HOT_MIDDLEWARE=true

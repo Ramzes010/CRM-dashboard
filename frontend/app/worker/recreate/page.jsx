@@ -30,7 +30,7 @@ export default function CreateWorkerPage() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Token 6578881f25b133aa817d7d8bb6c2a07b90e4bcff`
+          "Authorization": `Token ec6c8fa65702a71ef99f61667c238b3fdb5eee34`
         },
         body: JSON.stringify(workerData),
       });
@@ -51,7 +51,7 @@ export default function CreateWorkerPage() {
         <div className="flex items-start min-h-screen bg-[#003C46] text-white px-[3.056vw] mt-[5vw]">
           <div className="flex items-center mr-[18.056vw] max-md: ">
             <button className="mr-[6.667vw]" onClick={() => router.back()}>
-              <img src="../../images/icons/iconButton.svg" alt="Назад" className="w-[3.056vw] h-[3.056vw]" />
+              <img src="/images/icons/iconButton.svg" alt="Назад" className="w-[3.056vw] h-[3.056vw]" />
             </button>
             <h1 className="text-[3.889vw] leading-[4.167vw]">Обновление <br/> работника</h1>
           </div>
