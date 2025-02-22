@@ -1,29 +1,46 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation"; // Импорт роутера
+import { useRouter } from "next/navigation";
+
 export default function Main() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(false);
-  const router = useRouter(); // Используем роутер
+  const router = useRouter();
+
   const categories = [
     { id: "all", name: "All districts" },
     { id: "baisangurovsky", name: "Baisangurovsky" },
     { id: "sheikh_mansurovsky", name: "Sheikh Mansurovsky" },
     { id: "akhmatovsky", name: "Akhmatovsky" },
   ];
+
   useEffect(() => {
     const fetchOrders = async () => {
       setLoading(true);
       try {
-        // Искусственные данные
-        const artificialOrders = [
-          { id: 1, number: 1, time: "18:50", date: "21 JAN 24", category: "akhmatovsky", categoryName: "Akhmatovsky", status: "New", timeLeft: "4:26", items: "×1 Premium, ×2 Standard" },
-          { id: 2, number: 2, time: "19:15", date: "21 JAN 24", category: "akhmatovsky", categoryName: "Akhmatovsky", status: "Ready", timeLeft: "0:00", items: "×2 Mini" },
-          { id: 3, number: 3, time: "19:30", date: "21 JAN 24", category: "sheikh_mansurovsky", categoryName: "Sheikh Mansurovsk", status: "Ready", timeLeft: "1:15", items: "×1 Premium, ×1 Mini" },
-        ];
-        await new Promise((resolve) => setTimeout(resolve, 1000)); // Имитация задержки
-        setOrders(artificialOrders);
+        const response = await fetch("http://localhost/api/orders/", {
+          method: "GET",
+          headers: {
+            "Authorization": "Token ec6c8fa65702a71ef99f61667c238b3fdb5eee34",
+            "Content-Type": "application/json",
+          },
+        });
+        const data = await response.json();
+
+        const formattedOrders = data.results.map(order => ({
+          id: order.id,
+          number: order.id,
+          time: order.created_at.split(" ")[1],
+          date: order.created_at.split(" ")[0],
+          category: `district_${order.district}`,
+          categoryName: order.district_name,
+          status: order.status,
+          timeLeft: "4:26", // Временная заглушка
+          items: order.content.cart.boxes.map(box => `×${box.quantity} Box ${box.box_id}`).join(", ")
+        }));
+
+        setOrders(formattedOrders);
       } catch (error) {
         console.error("Error loading orders:", error);
       } finally {
@@ -32,14 +49,17 @@ export default function Main() {
     };
     fetchOrders();
   }, []);
+
   const getCategoryOrderCount = (categoryId) => {
     if (categoryId === "all") return orders.length;
     return orders.filter((order) => order.category === categoryId).length;
   };
+
   const filteredOrders = React.useMemo(() => {
     if (activeCategory === "all") return orders;
     return orders.filter((order) => order.category === activeCategory);
   }, [activeCategory, orders]);
+
   return (
     <div>
       {/* Навигация по категориям */}
@@ -62,38 +82,33 @@ export default function Main() {
           ))}
         </div>
       </div>
+
       {/* Заказы */}
-      <div className={`orders-container mt-[2vw] p-[2vw] rounded-lg flex flex-wrap gap-[2vw] ${filteredOrders.length <= 2 ? "justify-start" : "justify-around"}`}>
+      <div className="orders-container mt-[2vw] p-[2vw] rounded-lg grid grid-cols-3 gap-[2vw] justify-start">
         {loading ? (
           <p className="text-[1vw] text-[#888] text-center">Loading orders...</p>
         ) : filteredOrders.length > 0 ? (
           filteredOrders.map((order) => (
             <div
               key={order.id}
-              className="main-container flex w-[30.139vw] pt-[1.667vw] pr-[2.222vw] pb-[2.222vw] pl-[2.222vw] flex-col gap-[2.222vw] items-start flex-nowrap bg-[rgba(255,255,255,0.08)] rounded-[0.833vw] relative overflow-hidden my-0 cursor-pointer"
-              onClick={() => router.push(`/order/${order.id}`)} // Добавляем переход на страницу заказа
+              className="w-[30.14vw] p-[24px] bg-[rgba(255,255,255,0.08)] rounded-[12px] relative mx-auto my-0 flex flex-col gap-[24px] cursor-pointer"
+              onClick={() => router.push(`/order/${order.id}`)}
             >
-              <div className="flex flex-col gap-[2.222vw] items-start self-stretch shrink-0 flex-nowrap relative">
-                <div className="flex flex-col gap-[1.667vw] items-start self-stretch shrink-0 flex-nowrap relative z-[1]">
-                  <div className="flex flex-col gap-[1.111vw] items-start self-stretch shrink-0 flex-nowrap relative z-[2]">
-                    <span className="h-[1.389vw] self-stretch shrink-0 basis-auto text-[1.042vw] font-[460] leading-[1.389vw] text-[rgba(255,255,255,0.6)] tracking-[0.014vw] uppercase">
-                      {order.time}, {order.date}
-                    </span>
-                    <div className="flex flex-col gap-[0.833vw] items-start self-stretch shrink-0">
-                      <span className="text-[2.778vw] font-light leading-[3.056vw] text-[#fff]">№{order.number}</span>
-                      <span className="text-[1.319vw] font-medium leading-[1.944vw] text-[#fff]">{order.categoryName}</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="h-[0.069vw] self-stretch">
-                  <div className="w-full h-full bg-[rgba(255,255,255,0.12)] rounded-full" />
-                </div>
-                <div className="flex flex-col gap-[1.667vw] items-start self-stretch">
-                  <div className="flex flex-col gap-[0.556vw] items-start self-stretch">
-                    <span className="text-[1.042vw] font-[460] leading-[1.389vw] text-[rgba(255,255,255,0.6)] uppercase">Order</span>
-                    <span className="text-[1.319vw] font-medium leading-[1.944vw] text-[#fff]">{order.items}</span>
-                  </div>
-                </div>
+              <span className="text-[15px] text-[rgba(255,255,255,0.6)] uppercase">
+                {order.time}, {order.date}
+              </span>
+              <div>
+                <h2 className="text-[40px] text-white">№{order.number}</h2>
+                <p className="text-[19px] text-white">{order.categoryName}</p>
+              </div>
+              <button className="flex items-center gap-[8px] px-[0.83vw] py-[0.56vw] bg-[rgba(255,255,255,0.12)] rounded-[8px] border-none">
+                <span className="text-[16px] text-white">{order.status}</span>
+                <span className="text-[16px] text-[rgba(255,255,255,0.6)]">{order.timeLeft}</span>
+              </button>
+              <div className="w-full h-px bg-[rgba(255,255,255,0.12)]" />
+              <div>
+                <span className="text-[15px] text-[rgba(255,255,255,0.6)] uppercase">Заказ</span>
+                <p className="text-[19px] text-white">{order.items}</p>
               </div>
             </div>
           ))

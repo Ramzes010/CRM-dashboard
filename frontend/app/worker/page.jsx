@@ -6,64 +6,84 @@ import Header from "../header/Header";
 
 export default function WorkersPage() {
   const router = useRouter(); // Инициализируем useRouter
-
   const [activeDistrict, setActiveDistrict] = useState("all");
   const [activeRole, setActiveRole] = useState("all");
-  const [showRoleDropdown, setShowRoleDropdown] = useState(false);
   const [workers, setWorkers] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [showRoleDropdown, setShowRoleDropdown] = useState(false);
 
-  const districts = [
-    { id: "all", name: "Все районы" },
-    { id: "baisangurovsky", name: "Байсангуровский" },
-    { id: "sheikh_mansurovsky", name: "Шейх Мансуровский" },
-    { id: "akhmatovsky", name: "Ахматовский" },
-  ];
+  useEffect(() => {
+    fetchWorkers();
+  }, []);
 
-  const roles = [
-    { id: "all", name: "Все роли" },
-    { id: "couriers", name: "Курьеры" },
-    { id: "confectioners", name: "Кондитеры" },
-  ];
-
-  const handleCreateWorker = async () => {
-    const newWorker = {
-      name: "Новый Работник",
-      district: activeDistrict === "all" ? "baisangurovsky" : activeDistrict,
-      role: activeRole === "all" ? "couriers" : activeRole,
-      phone: "+1234567890",
-      status: "Доступен",
-    };
-  
+  // Функция загрузки работников с API
+  const fetchWorkers = async () => {
+    setLoading(true);
     try {
       const response = await fetch("http://localhost/api/workers/", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Token ec6c8fa65702a71ef99f61667c238b3fdb5eee34`
+          "Authorization": "Token ec6c8fa65702a71ef99f61667c238b3fdb5eee34",
         },
-        body: JSON.stringify(newWorker),
       });
-  
+
       if (!response.ok) {
-        throw new Error("Failed to create worker");
+        throw new Error("Ошибка при загрузке данных");
       }
-  
-      const createdWorker = await response.json();
-      setWorkers([...workers, createdWorker]);
+
+      const data = await response.json();
+
+      // Проверяем, есть ли results
+      if (!data.results) {
+        throw new Error("Некорректный ответ API");
+      }
+
+      // Маппинг данных из API под нужные переменные
+      const mappedWorkers = data.results.map((worker, index) => ({
+        number: index + 1, // Авто-нумерация
+        districtName: getDistrictName(worker.district), // Преобразуем ID района в название
+        name: worker.fullname, // Полное имя
+        role: getRoleName(worker.role), // Преобразуем роль
+        phone: worker.phone_number, // Телефон
+        status: worker.status ? "Доступен" : "Недоступен", // true → "Доступен", false → "Недоступен"
+      }));
+
+      setWorkers(mappedWorkers);
     } catch (error) {
-      console.error("Error creating worker:", error);
+      console.error("Ошибка при получении работников:", error);
+    } finally {
+      setLoading(false);
     }
   };
-  
-  
-  const handleNavigation = (path) => {
-    router.push(path); // Исправленный вызов handleNavigation
+
+  // Функция для получения названия района по ID
+  const getDistrictName = (districtId) => {
+    const districtMap = {
+      1: "Байсангуровский",
+      2: "Шейх Мансуровский",
+      3: "Ахматовский",
+    };
+    return districtMap[districtId] || "Не указан";
   };
 
-  const filteredWorkers = workers.filter(worker =>
-    (activeDistrict === "all" || worker.district === activeDistrict) &&
-    (activeRole === "all" || worker.role === activeRole)
+  // Функция для получения роли по значению API
+  const getRoleName = (role) => {
+    const roleMap = {
+      courier: "Курьер",
+      confectioner: "Кондитер",
+    };
+    return roleMap[role] || "Не указана";
+  };
+
+  const handleNavigation = (path) => {
+    router.push(path);
+  };
+
+  const filteredWorkers = workers.filter(
+    (worker) =>
+      (activeDistrict === "all" || worker.districtName === getDistrictName(activeDistrict)) &&
+      (activeRole === "all" || worker.role === getRoleName(activeRole))
   );
 
   return (
@@ -75,7 +95,12 @@ export default function WorkersPage() {
         </h1>
 
         <div className="flex justify-center gap-4 mb-4">
-          {districts.map((district) => (
+          {[
+            { id: "all", name: "Все районы" },
+            { id: 1, name: "Байсангуровский" },
+            { id: 2, name: "Шейх Мансуровский" },
+            { id: 3, name: "Ахматовский" },
+          ].map((district) => (
             <button
               key={district.id}
               className={`px-4 py-2 rounded-full mb-[9.167vw] border border-white/20 ${
@@ -95,11 +120,15 @@ export default function WorkersPage() {
               onMouseEnter={() => setShowRoleDropdown(true)}
               onMouseLeave={() => setShowRoleDropdown(false)}
             >
-              <button className="mr-[0.556vw]">{roles.find(r => r.id === activeRole)?.name}</button>
+              <button className="mr-[0.556vw]">{getRoleName(activeRole)}</button>
               <img className="mr-[1.111vw] ml-[0.556vw]" src="../images/icons/dawn.svg" alt="x" />
               {showRoleDropdown && (
                 <div className="absolute top-8 left-0 bg-white text-black shadow-md rounded-lg mt-1">
-                  {roles.map(role => (
+                  {[
+                    { id: "all", name: "Все роли" },
+                    { id: "courier", name: "Курьер" },
+                    { id: "confectioner", name: "Кондитер" },
+                  ].map((role) => (
                     <div
                       key={role.id}
                       className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
@@ -121,7 +150,7 @@ export default function WorkersPage() {
           <div>
             <button
               className="py-[0.417vw] px-[0.833vw] text-[#003C46] bg-[#53CFBA] rounded-[0.556vw]"
-              onClick={() => handleNavigation("/worker/create")} // Исправленный вызов
+              onClick={() => handleNavigation("/worker/create")}
             >
               Создать работника
             </button>
@@ -145,8 +174,8 @@ export default function WorkersPage() {
               </thead>
               <tbody>
                 {filteredWorkers.length > 0 ? (
-                  filteredWorkers.map((worker, index) => (
-                    <tr key={worker.id} className="border-t border-gray-700">
+                  filteredWorkers.map((worker) => (
+                    <tr key={worker.number} className="">
                       <td className="p-2">{worker.number}</td>
                       <td className="p-2">{worker.districtName}</td>
                       <td className="p-2">{worker.name}</td>
@@ -155,6 +184,9 @@ export default function WorkersPage() {
                       <td className={`p-2 ${worker.status === "Доступен" ? "text-green-400" : "text-red-400"}`}>
                         {worker.status}
                       </td>
+                      <button onClick={() => navigate(`/workers/${worker.id}`)}>
+                        <img src="/images/icons/IconButton.svg" alt="IconButton" />
+                      </button>
                     </tr>
                   ))
                 ) : (
