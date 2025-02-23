@@ -9,10 +9,10 @@ export default function Main() {
   };
 
   return (
-    <div className="main-container bg-[#e6ebce] rounded-[24px] mx-auto w-[1440px]">
+    <div className="main-container bg-[#e6ebce]  mx-auto w-full">
       {/* Header */}
       <div className="h-[80px]">
-        <div className="w-[102px] h-[30px] mt-[25px] mx-auto bg-[#ccc]" />
+        <img src="/images/Logo.svg" alt="images/Logo" className="m-auto  pt-[20px]"/>
       </div>
 
       {/* Main Content */}
