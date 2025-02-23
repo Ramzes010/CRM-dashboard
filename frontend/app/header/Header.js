@@ -16,7 +16,9 @@ export default function Header() {
   };
 
   return (
-    <header className="main-container w-full bg-[#e6ebce]">
+    <div>
+      
+    <header className="main-container w-full bg-[#e6ebce] max-md:hidden">
       <div className="w-[100vw] h-[5.56vw] relative overflow-hidden mx-auto my-0 flex items-center">
         <HeaderLogoPicheni />
         <div className="flex w-[23.47vw] items-start flex-nowrap absolute top-0 bottom-0 left-1/2 translate-x-[-49.85%] translate-y-0">
@@ -47,5 +49,6 @@ export default function Header() {
         </div>
       </div>
     </header>
+    </div>
   );
 }
