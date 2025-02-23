@@ -18,7 +18,7 @@ export default function Main() {
       {/* Main Content */}
       <div className="bg-[#003c46] rounded-t-[24px] px-[44px] pt-[72px]">
         <div className="max-w-[343px] mx-auto">
-          <h1 className="text-[40px] text-white text-center font-['NAMU'] font-light mb-8">
+          <h1 className="text-[30px] text-white text-center  font-light mb-8">
             Добро пожаловать
           </h1>
 
@@ -28,7 +28,6 @@ export default function Main() {
             <div className="p-6 border-b border-[#1f535c]">
               <label className="text-[15px] text-[rgba(255,255,255,0.6)] uppercase">Номер</label>
               <div className="flex items-center gap-3 mt-2">
-                <div className="w-[22px] h-[22px] bg-[#ccc]" />
                 <input 
                   type="tel"
                   placeholder="+7 777 777 77 77"
@@ -87,10 +86,10 @@ export default function Main() {
           </div>
           <div className="flex gap-3">
             <div className="w-[32px] h-[32px] bg-[rgba(255,255,255,0.12)] rounded-[8px] p-2">
-              <div className="w-full h-full bg-[#ccc]" />
+              <img src="/images/telegram.svg" alt="/telegram" />
             </div>
             <div className="w-[32px] h-[32px] bg-[rgba(255,255,255,0.12)] rounded-[8px] p-2">
-              <div className="w-full h-full bg-[#ccc]" />
+              <img src="/images/instagram.svg" alt="instagram" />
             </div>
           </div>
         </div>
