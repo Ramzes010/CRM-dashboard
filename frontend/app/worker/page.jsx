@@ -20,38 +20,49 @@ export default function WorkersPage() {
   const fetchWorkers = async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://localhost/api/workers/", {
+      const authToken = localStorage.getItem('authToken');
+      if (!authToken) {
+        throw new Error("Токен авторизации не найден");
+      }
+
+      const response = await fetch("http://localhost/api/profiles/", {  // Изменен URL
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Token ec6c8fa65702a71ef99f61667c238b3fdb5eee34",
+          "Authorization": `Token ${authToken}`,
         },
       });
 
       if (!response.ok) {
-        throw new Error("Ошибка при загрузке данных");
+        const errorData = await response.json();
+        console.log("Ответ сервера:", errorData); // Добавляем лог для отладки
+        throw new Error(errorData.detail || "Ошибка при загрузке данных");
       }
 
       const data = await response.json();
+      console.log("Полученные данные:", data); // Добавляем лог для отладки
 
-      // Проверяем, есть ли results
-      if (!data.results) {
-        throw new Error("Некорректный ответ API");
-      }
+      // Проверяем формат данных и адаптируем маппинг
+      const workersData = Array.isArray(data) ? data : (data.results || []);
 
       // Маппинг данных из API под нужные переменные
-      const mappedWorkers = data.results.map((worker, index) => ({
-        number: index + 1, // Авто-нумерация
-        districtName: getDistrictName(worker.district), // Преобразуем ID района в название
-        name: worker.fullname, // Полное имя
-        role: getRoleName(worker.role), // Преобразуем роль
-        phone: worker.phone_number, // Телефон
-        status: worker.status ? "Доступен" : "Недоступен", // true → "Доступен", false → "Недоступен"
+      const mappedWorkers = workersData.map((worker, index) => ({
+        id: worker.id, // Добавляем id для возможности навигации
+        number: index + 1,
+        districtName: getDistrictName(worker.district),
+        name: worker.fullname,
+        role: getRoleName(worker.role),
+        phone: worker.phone_number,
+        status: worker.status ? "Доступен" : "Недоступен",
       }));
 
       setWorkers(mappedWorkers);
     } catch (error) {
       console.error("Ошибка при получении работников:", error);
+      console.error("Детали ошибки:", error.message); // Добавляем больше деталей об ошибке
+      if (error.message === "Токен авторизации не найден") {
+        router.push('/login');
+      }
     } finally {
       setLoading(false);
     }

@@ -24,28 +24,36 @@ const Dashboard = () => {
   React.useEffect(() => {
     const fetchData = async () => {
       try {
+        const authToken = localStorage.getItem('authToken');
+        if (!authToken) {
+          throw new Error("Токен авторизации не найден");
+        }
+
+        const headers = {
+          'Authorization': `Token ${authToken}`,
+          'Content-Type': 'application/json'
+        };
+
+        // Запрос данных дашборда
         const dashboardResponse = await fetch('http://localhost/api/dashboard/dashboard/', {
-          headers: {
-            'Authorization': `Token ec6c8fa65702a71ef99f61667c238b3fdb5eee34`,
-            'Content-Type': 'application/json'
-          }
+          headers
         });
         
         if (!dashboardResponse.ok) {
-          throw new Error('Dashboard response was not ok');
+          const errorData = await dashboardResponse.json();
+          throw new Error(errorData.detail || 'Ошибка при загрузке данных дашборда');
         }
         
         const dashboardResult = await dashboardResponse.json();
 
+        // Запрос данных cookies
         const cookiesResponse = await fetch('http://localhost/api/cookies/get_cookies/?box_id=2', {
-          headers: {
-            'Authorization': `Token ec6c8fa65702a71ef99f61667c238b3fdb5eee34`,
-            'Content-Type': 'application/json'
-          }
+          headers
         });
 
         if (!cookiesResponse.ok) {
-          throw new Error('Cookies response was not ok');
+          const errorData = await cookiesResponse.json();
+          throw new Error(errorData.detail || 'Ошибка при загрузке данных cookies');
         }
 
         const cookiesResult = await cookiesResponse.json();
@@ -54,15 +62,14 @@ const Dashboard = () => {
           cookiesMap[cookie.id] = cookie.name;
         });
 
+        // Запрос данных boxes
         const boxesResponse = await fetch('http://localhost/api/boxes/', {
-          headers: {
-            'Authorization': `Token ec6c8fa65702a71ef99f61667c238b3fdb5eee34`,
-            'Content-Type': 'application/json'
-          }
+          headers
         });
 
         if (!boxesResponse.ok) {
-          throw new Error('Boxes response was not ok');
+          const errorData = await boxesResponse.json();
+          throw new Error(errorData.detail || 'Ошибка при загрузке данных boxes');
         }
 
         const boxesResult = await boxesResponse.json();
@@ -76,8 +83,12 @@ const Dashboard = () => {
           cookies: cookiesMap,
           boxes: boxesMap
         });
+
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Ошибка при загрузке данных:', error);
+        if (error.message === "Токен авторизации не найден") {
+          router.push('/login');
+        }
       }
     };
 
@@ -208,7 +219,7 @@ const Dashboard = () => {
             <span className="text-[1.667vw] font-medium leading-[1.944vw] text-white mb-[1.667vw]">Popular tastes</span>
             
             <div className="flex w-full h-[38.889vw] p-[0.556vw] flex-col items-start">
-              <div className="flex w-full h-full bg-[url('/images/dashboard_background.svg')] bg-no-repeat relative">
+              <div className="flex w-full h-full bg-[url('/images/dashboard_background.svg')] bg-cover bg-center bg-no-repeat relative">
                 <div className="relative right-5 top-0 bottom-0 flex flex-col justify-between py-[1.111vw] text-[0.833vw] font-medium text-[rgba(255,255,255,0.6)] uppercase">
                   {[100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0].map((num, index) => (
                     <span key={index} className="leading-none">{num}</span>

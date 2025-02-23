@@ -3,9 +3,41 @@ import React, { useState } from "react";
 
 export default function Main() {
   const [showPassword, setShowPassword] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const togglePassword = () => {
     setShowPassword(!showPassword);
+  };
+
+  const handleLogin = async () => {
+    try {
+      const response = await fetch('http://localhost/api/login/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          phone_number: phoneNumber,
+          password: password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Изменяем ключ с 'token' на 'authToken' для консистентности
+        localStorage.setItem('authToken', data.token);
+        console.log('Токен сохранен:', data.token); // Добавляем лог для проверки
+        window.location.href = '/';
+      } else {
+        setError(data.detail || 'Ошибка при входе');
+      }
+    } catch (err) {
+      setError('Ошибка сервера');
+      console.error('Login error:', err);
+    }
   };
 
   return (
@@ -22,6 +54,12 @@ export default function Main() {
             Добро пожаловать
           </h1>
 
+          {error && (
+            <div className="text-red-500 text-center mb-4">
+              {error}
+            </div>
+          )}
+
           {/* Form */}
           <div className="border border-[#1f535c] rounded-[12px]">
             {/* Phone Input */}
@@ -31,6 +69,8 @@ export default function Main() {
                 <input 
                   type="tel"
                   placeholder="+7 777 777 77 77"
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
                   className="bg-transparent text-[22px] text-[rgba(255,255,255,0.6)] outline-none w-full"
                 />
               </div>
@@ -44,6 +84,8 @@ export default function Main() {
                   <input 
                     type={showPassword ? "text" : "password"}
                     placeholder="Введите пароль"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     className="bg-transparent text-[22px] text-[rgba(255,255,255,0.6)] outline-none w-full"
                   />
                 </div>
@@ -67,7 +109,10 @@ export default function Main() {
 
           {/* Buttons */}
           <div className="mt-6 space-y-3">
-            <button className="w-full h-[56px] bg-[#1b5b66] rounded-[12px] text-[rgba(255,255,255,0.45)]">
+            <button 
+              onClick={handleLogin}
+              className="w-full h-[56px] bg-[#1b5b66] rounded-[12px] text-[rgba(255,255,255,0.45)]"
+            >
               Войти
             </button>
             <button className="w-full h-[56px] border border-[rgba(255,255,255,0.12)] rounded-[12px] text-white">

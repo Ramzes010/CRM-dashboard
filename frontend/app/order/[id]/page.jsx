@@ -12,22 +12,32 @@ export default function OrderDetails() {
 
     const fetchOrderData = async () => {
       try {
+        const authToken = localStorage.getItem('authToken');
+        if (!authToken) {
+          throw new Error("Токен авторизации не найден");
+        }
+
         const response = await fetch(`http://localhost/api/orders/${id}/`, {
           method: "GET",
           headers: {
-            "Authorization": "Token ec6c8fa65702a71ef99f61667c238b3fdb5eee34", // Замените на актуальный токен
+            "Authorization": `Token ${authToken}`,
             "Content-Type": "application/json",
           },
         });
 
         if (response.ok) {
           const data = await response.json();
-          setOrder(data); // Устанавливаем данные заказа
+          setOrder(data);
         } else {
-          console.error(`Error fetching data: ${response.status} - ${response.statusText}`);
+          const errorData = await response.json();
+          console.error("Ответ сервера:", errorData);
+          throw new Error(errorData.detail || `Ошибка при загрузке данных: ${response.status}`);
         }
       } catch (error) {
-        console.error("Error fetching data", error);
+        console.error("Ошибка при получении данных заказа:", error);
+        if (error.message === "Токен авторизации не найден") {
+          router.push('/login');
+        }
       } finally {
         setLoading(false);
       }

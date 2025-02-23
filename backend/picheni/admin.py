@@ -10,17 +10,20 @@ admin.site.register(District)
 admin.site.register(Franchising)
 class CustomUserAdmin(UserAdmin):
     list_display = ('fullname', 'phone_number', 'role', 'status', 'is_active', 'is_staff')
-    # Поля, которые можно редактировать в форме
+    
     fieldsets = (
         (None, {
             'fields': ('fullname', 'phone_number', 'address', 'role', 'district', 'status', 'avatar', 'telegram_token'),
         }),
+        ('Права доступа', {
+            'fields': ('is_active', 'is_staff', 'is_superuser'),
+        }),
     )
-    # Поля при создании нового пользователя
+    
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('fullname', 'phone_number', 'address', 'password1', 'password2', 'role', 'district', 'status'),
+            'fields': ('fullname', 'phone_number', 'address', 'password1', 'password2', 'role', 'district', 'status', 'is_staff', 'is_superuser'),
         }),
     )
     model = UserProfile

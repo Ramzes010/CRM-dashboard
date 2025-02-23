@@ -26,11 +26,16 @@ export default function CreateWorkerPage() {
   const handleSubmit = async () => {
     const workerData = { role, district, fullname, address, phone_number, password, telegram_token };
     try {
+      const authToken = localStorage.getItem('authToken');
+      if (!authToken) {
+        throw new Error("Токен авторизации не найден");
+      }
+      
       const response = await fetch("http://localhost/api/profiles/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Token ec6c8fa65702a71ef99f61667c238b3fdb5eee34`
+          "Authorization": `Token ${authToken}`
         },
         body: JSON.stringify(workerData),
       });
