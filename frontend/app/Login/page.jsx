@@ -131,10 +131,10 @@ export default function Main() {
           </div>
           <div className="flex gap-3">
             <div className="w-[32px] h-[32px] bg-[rgba(255,255,255,0.12)] rounded-[8px] p-2">
-              <img src="/images/telegram.svg" alt="/telegram" />
+              <img src="/images/icons/telegram.svg" alt="/telegram" />
             </div>
             <div className="w-[32px] h-[32px] bg-[rgba(255,255,255,0.12)] rounded-[8px] p-2">
-              <img src="/images/instagram.svg" alt="instagram" />
+              <img src="/images/icons/instagram.svg" alt="instagram" />
             </div>
           </div>
         </div>
