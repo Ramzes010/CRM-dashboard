@@ -45,7 +45,7 @@ export default function Main() {
       
       
       {/* Header */}
-      <div className="h-[5.556vw] max-md:hidden">
+      <div className="h-[5.556vw]  max-md:hidden">
         <img src="/images/Logo.svg" alt="images/Logo" className="m-auto pt-[1.389vw] max-md:hidden"/>
       </div>
 
