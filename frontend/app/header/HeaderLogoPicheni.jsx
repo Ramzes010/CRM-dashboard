@@ -2,7 +2,7 @@ import React from "react";
 
 const Logo = ({ onClick, className }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="102" height="30" viewBox="0 0 102 30" fill="none"  className="w-[7.083vw] h-[2.083vw] ml-[3.056vw]" >
+    <svg xmlns="http://www.w3.org/2000/svg" width="102" height="30" viewBox="0 0 102 30" fill="none"  className="w-[7.083vw] h-[2.083vw]" >
 <path d="M26.486 5.6826H23.5625V23.6528H26.486V5.6826Z" fill="#003C46"/>
 <path d="M55.9328 14.6712H51.5368V5.6826H48.6133V23.6528H51.5368V17.5529H55.9328V23.6528H58.8563V5.6826H55.9328V14.6712Z" fill="#003C46"/>
 <path d="M100.353 5.6826H97.4297V23.6528H100.353V5.6826Z" fill="#003C46"/>

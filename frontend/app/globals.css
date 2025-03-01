@@ -18,7 +18,12 @@
 body {
   color: var(--foreground);
   background: var(--background);
+  width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
+
 
 /* Стили для автозаполнения в Chrome */
 input:-webkit-autofill,
@@ -43,4 +48,58 @@ input:autofill:active {
 /* Убираем рамку при фокусе */
 input:focus {
     outline: none !important;
+}
+
+select {
+  background-color: transparent; /* Прозрачный фон для самого select */
+  color: white; /* Цвет текста */
+  border: 1px solid rgba(255, 255, 255, 0.6); /* Прозрачная граница */
+  appearance: none; /* Убирает стандартный стиль браузера */
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+
+.react-phone-input-2 {
+  .form-control {
+    background-color: transparent !important;
+    border: none !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    width: 100% !important;
+    height: auto !important;
+    padding-left: 3vw !important;
+  }
+
+  .flag-button {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+
+  .selected-flag {
+    background-color: transparent !important;
+    &:hover, &:focus {
+      background-color: transparent !important;
+    }
+  }
+
+  .country-list {
+    background-color: #003c46 !important;
+    color: white !important;
+    .country {
+      &:hover {
+        background-color: #1b5b66 !important;
+      }
+    }
+  }
+
+  .search-box {
+    background-color: #003c46 !important;
+    color: white !important;
+    border: 1px solid #1f535c !important;
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6) !important;
+    }
+  }
+
+
 }

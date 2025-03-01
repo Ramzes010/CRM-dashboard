@@ -1,4 +1,4 @@
-"use client"; // Важно для использования useEffect в app router
+"use client";
 
 import React from "react";
 import { useRouter } from "next/navigation";
@@ -11,44 +11,38 @@ export default function Header() {
     router.push(path);
   };
 
-  const showAlert = () => {
-    alert("The button is muted. The page is being developed!");
-  };
-
   return (
-    <div>
-      
-    <header className="main-container w-full bg-[#e6ebce] max-md:hidden">
-      <div className="w-[100vw] h-[5.56vw] relative overflow-hidden mx-auto my-0 flex items-center">
-        <HeaderLogoPicheni />
-        <div className="flex w-[23.47vw] items-start flex-nowrap absolute top-0 bottom-0 left-1/2 translate-x-[-49.85%] translate-y-0">
-          <div 
-            className="flex w-[6.88vw] pt-[0.56vw] pr-[1.39vw] pb-[0.56vw] pl-[1.39vw] justify-center items-center self-stretch shrink-0 flex-nowrap relative z-[1] cursor-pointer"
-            onClick={() => handleNavigation("/")}
-          >
-            <span className="h-[1.67vw] shrink-0 basis-auto golos-text font-[500] text-[1.11vw] font-medium leading-[1.67vw] text-[#003c46] hover:text-[#858745] relative text-left whitespace-nowrap z-[2]">
-              Orders
-            </span>
-          </div>
-          <div 
-            className="flex w-[7.85vw] pt-[0.56vw] pr-[1.39vw] pb-[0.56vw] pl-[1.39vw] justify-center items-center self-stretch shrink-0 flex-nowrap relative z-[3] cursor-pointer"
-            onClick={() => handleNavigation("/dashboard")}
-          >
-            <span className="h-[1.67vw] shrink-0 basis-auto font-golos font-[500] text-[1.11vw] font-medium leading-[1.67vw] text-[#003c46] hover:text-[#858745] relative text-left whitespace-nowrap z-[4]">
-            Dashboard
-            </span>
-          </div>
-          <div 
-            className="flex w-[7.85vw] pt-[0.56vw] pr-[1.39vw] pb-[0.56vw] pl-[1.39vw] justify-center items-center self-stretch shrink-0 flex-nowrap relative z-[3] cursor-pointer"
-            onClick={() => handleNavigation("/worker")}
-          >
-            <span className="h-[1.67vw] shrink-0 basis-auto font-golos font-[500] text-[1.11vw] font-medium leading-[1.67vw] text-[#003c46] hover:text-[#858745] relative text-left whitespace-nowrap z-[4]">
-              Workers
-            </span>
+    <header className="w-[100vw] bg-[#E6EBCE] max-md:hidden">
+      <div className="w-[83.33vw] h-[5.56vw] relative mx-auto flex items-center">
+        <div className="flex items-center gap-[1.11vw]">
+          <HeaderLogoPicheni />
+          <div className="w-[2.78vw] h-[2.78vw] flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none" className="w-[1.67vw] h-[1.67vw]">
+              <path d="M19.9813 18.5206L15.9001 14.4377C17.1238 12.8432 17.6951 10.8428 17.4982 8.84248C17.3012 6.84215 16.3507 4.99164 14.8395 3.66633C13.3284 2.34102 11.3697 1.64015 9.36074 1.7059C7.35182 1.77165 5.44312 2.59909 4.02184 4.02037C2.60055 5.44165 1.77311 7.35035 1.70737 9.35927C1.64162 11.3682 2.34249 13.3269 3.6678 14.8381C4.99311 16.3493 6.84362 17.2997 8.84394 17.4967C10.8443 17.6936 12.8446 17.1224 14.4392 15.8987L18.5238 19.9842C18.6197 20.0801 18.7336 20.1562 18.859 20.2081C18.9843 20.26 19.1186 20.2867 19.2543 20.2867C19.3899 20.2867 19.5243 20.26 19.6496 20.2081C19.775 20.1562 19.8888 20.0801 19.9848 19.9842C20.0807 19.8882 20.1568 19.7743 20.2087 19.649C20.2606 19.5237 20.2873 19.3893 20.2873 19.2537C20.2873 19.118 20.2606 18.9837 20.2087 18.8584C20.1568 18.733 20.0807 18.6191 19.9848 18.5232L19.9813 18.5206ZM3.78296 9.62525C3.78296 8.46946 4.12569 7.33963 4.76781 6.37863C5.40993 5.41763 6.3226 4.66863 7.39041 4.22633C8.45821 3.78403 9.6332 3.6683 10.7668 3.89378C11.9003 4.11927 12.9416 4.67583 13.7589 5.49309C14.5761 6.31036 15.1327 7.35161 15.3582 8.48519C15.5837 9.61877 15.4679 10.7937 15.0256 11.8616C14.5833 12.9294 13.8343 13.842 12.8733 14.4841C11.9123 15.1263 10.7825 15.469 9.62671 15.469C8.07734 15.4674 6.59189 14.8512 5.49632 13.7556C4.40075 12.6601 3.78456 11.1746 3.78296 9.62525Z" fill="#003C46"/>
+            </svg>
           </div>
         </div>
+        <nav className="absolute left-1/2 transform -translate-x-1/2 flex gap-[2.78vw]">
+          <button 
+            className="text-[1.11vw] font-medium text-[#003C46] hover:text-[#858745] transition-colors"
+            onClick={() => handleNavigation("/")}
+          >
+            Orders
+          </button>
+          <button 
+            className="text-[1.11vw] font-medium text-[#003C46] hover:text-[#858745] transition-colors"
+            onClick={() => handleNavigation("/dashboard")}
+          >
+            Dashboard
+          </button>
+          <button 
+            className="text-[1.11vw] font-medium text-[#003C46] hover:text-[#858745] transition-colors"
+            onClick={() => handleNavigation("/worker")}
+          >
+            Workers
+          </button>
+        </nav>
       </div>
     </header>
-    </div>
   );
 }
