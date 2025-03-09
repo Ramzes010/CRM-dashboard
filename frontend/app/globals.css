@@ -103,3 +103,13 @@ select {
 
 
 }
+
+@media (max-width: 768px) {
+  .team-performance-mobile {
+    /* Добавьте стили для мобильной версии */
+    background-color: #003c46;
+    border-radius: 10px;
+    padding: 20px;
+    /* Настройте другие стили по необходимости */
+  }
+}

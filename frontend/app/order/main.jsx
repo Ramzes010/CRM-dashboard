@@ -146,10 +146,11 @@ export default function Main() {
               <div
                 key={order.id}
                 className="w-[30.15vw] pt-[1.67vw] pr-[2.22vw] pb-[2.22vw] pl-[2.22vw] flex flex-col gap-[2.22vw] items-start bg-[rgba(255,255,255,0.08)] rounded-[0.833vw] max-md:rounded-[3vw] relative overflow-hidden mx-auto my-0
-                max-md:w-[90.333vw] max-md:h-[69.6vw] max-md:m-0] max-md:p-0 max-md:h-auto"
+                max-md:w-[90.333vw] max-md:h-[69.6vw] max-md:m-0] max-md:p-0 max-md:h-auto cursor-pointer"
                 onClick={() => router.push(`/order/${order.id}`)}
               >
-                <div className="flex flex-col gap-[1.67vw] items-start w-full max-md:py-[5.333vw] max-md:px-[6.4vw]">
+                <div className="flex flex-row gap-[10.67vw] max-md:gap-[13.5vw] content-between items-start w-full max-md:py-[5.333vw] max-md:px-[6.4vw]">
+                  <div>
                   <span className="text-[1.04vw] max-md:text-[4vw] font-medium leading-[1.39vw] text-[rgba(255,255,255,0.6)] uppercase max-md:mb-[3.2vw]">
                     {order.time}, {order.date}
                   </span>
@@ -157,6 +158,8 @@ export default function Main() {
                     <h2 className="text-[2.78vw] font-light leading-[3.06vw] text-white max-md:text-[8.533vw] max-md:mt-[3.133vw]">№{order.number}</h2>
                     <p className="text-[1.32vw] font-medium leading-[1.94vw] text-white max-md:text-[5.067vw] max-md:mt-[7.133vw]">{order.categoryName}</p>
                   </div>
+                  </div>
+                  <img src="/images/icons/IconButton.svg" alt="arrow-right" className="w-[3vw] h-[3vw] max-md:w-[10.067vw] max-md:h-[10.067vw] max-md:mr-[2.133vw] rotate-180" />
                 </div>
                 <button className="flex w-[12.28vw] pt-[0.56vw] pr-[0.83vw] pb-[0.56vw] pl-[0.83vw] gap-[0.56vw] items-center bg-[rgba(255,255,255,0.12)] rounded-[0.56vw] 
                 max-md:w-[44.333vw] max-md:h-[10.4vw] max-md:ml-[6.4vw] max-md:py-[4.133vw] max-md:px-[3.2vw] max-md:rounded-[2vw] max-md:mb-[6.4vw]">
@@ -186,7 +189,7 @@ export default function Main() {
       </div>
 
       {/* <Footer/> */}
-      <div className=" flex justify-between items-center py-[1vw] px-[3.056vw] max-md:flex-col-reverse max-md:items-start max-md:mt-[35.467vw] max-md:mb-[15.467vw]">
+      <div className="relative top-[22vw] left-0 right-0  flex justify-between items-center py-[1vw] px-[3.056vw] max-md:flex-col-reverse max-md:items-start max-md:mt-[35.467vw] max-md:mb-[15.467vw]">
         <div className="flex gap-[0.278vw] items-center text-[0.833vw] uppercase">
           <span className="text-[rgba(255,255,255,0.45)] mr-[1.111vw] max-md:text-[3.2vw] max-md:mr-[7.167vw]">Picheni © {new Date().getFullYear()}</span>
           <Link href="/terms" className="text-[rgba(255,255,255,0.6)] mr-[1.111vw]  hover:text-white transition-colors max-md:text-[3.2vw] max-md:mr-[7.167vw]">terms</Link>
@@ -213,7 +216,7 @@ export default function Main() {
           <img src="/images/icons/telegram.svg" alt="/images/telegram.png" />
           </a>
         </div>
-    </div>
+      </div>
       {/* <Footer/> */}
       {/* Навигационные кнопки */}
       
