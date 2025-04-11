@@ -79,12 +79,12 @@ export default function Main() {
             {/* Phone Input */}
             <div className="p-[1.389vw] border-b border-[#1f535c] max-md:pt-[4vw] max-md:pl-[6.4vw] max-md:pb-[2.133vw]">
               <label className="text-[1.042vw] text-[rgba(255,255,255,0.6)] uppercase max-md:text-[4vw]">Number</label>
-              <div className="flex items-center gap-[0.208vw] mt-[0.139vw]">
+              <div className="flex items-center gap-[0.208vw] mt-[0.139vw] ">
                 <PhoneInput
                   country={'kz'}
                   value={phoneNumber}
                   onChange={phone => setPhoneNumber(phone)}
-                  inputClass="!bg-transparent !text-[1.528vw] !text-[rgba(255,255,255,0.6)] !outline-none !w-full !appearance-none !max-md:text-[5.867vw] !max-md:pb-[2.133vw] !border-none"
+                  inputClass="!bg-transparent !text-[1.528vw] max-md:!text-[4.8vw] !text-[rgba(255,255,255,0.6)] !outline-none !w-full !appearance-none  !max-md:pb-[2.133vw] !border-none"
                   containerClass="!w-full"
                   buttonClass="!bg-transparent !border-none"
                   dropdownClass="!bg-[#003c46] !text-white"

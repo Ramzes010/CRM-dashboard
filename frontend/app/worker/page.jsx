@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation"; // Добавлен импорт useRouter
 import Header from "../header/Header";
 
@@ -13,11 +13,29 @@ export default function WorkersPage() {
   const [workers, setWorkers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showRoleDropdown, setShowRoleDropdown] = useState(false);
+  const [showDistrictDropdown, setShowDistrictDropdown] = useState(false);
 
-  
+  const districtDropdownRef = useRef(null);
+  const roleDropdownRef = useRef(null);
 
   useEffect(() => {
     fetchWorkers();
+  }, []);
+
+  const handleClickOutside = (event) => {
+    if (districtDropdownRef.current && !districtDropdownRef.current.contains(event.target)) {
+      setShowDistrictDropdown(false);
+    }
+    if (roleDropdownRef.current && !roleDropdownRef.current.contains(event.target)) {
+      setShowRoleDropdown(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   // Функция загрузки работников с API
@@ -101,12 +119,21 @@ export default function WorkersPage() {
       (activeRole === "all" || worker.role === getRoleName(activeRole))
   );
 
+  const toggleDistrict = () => {
+    setActiveDistrict((prevDistrict) => {
+      const districts = ["all", 1, 2, 3];
+      const currentIndex = districts.indexOf(prevDistrict);
+      const nextIndex = (currentIndex + 1) % districts.length;
+      return districts[nextIndex];
+    });
+  };
+
   return (
     <div className="min-h-screen bg-[#003C46]">
       <Header />
 
     {/* header mobile */}
-    <svg width="24" height="24" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg" className="hidden max-md:block max-md:w-[10.417vw] max-md:ml-[1.267vw] max-md:mt-[3.2vw]">
+    <svg width="36" height="36" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg" className="hidden max-md:block max-md:w-[10.417vw] max-md:ml-[4.665vw] max-md:mt-[3.2vw] max-md:mb-[12.828vw]">
       <g clipPath="url(#clip0_1312_7314)">
       <path d="M18.5 36C28.4411 36 36.5 27.9411 36.5 18C36.5 8.05887 28.4411 0 18.5 0C8.55888 0 0.5 8.05887 0.5 18C0.5 27.9411 8.55888 36 18.5 36Z" fill="#53CFBA"/>
       <path d="M23.4516 11.0828C22.1844 9.79766 20.4364 9 18.5027 9C14.6354 9 11.5 12.1796 11.5 16.1014C11.5 18.0624 12.2811 19.835 13.5538 21.1201L15.1543 19.4971C14.2967 18.6274 13.7669 17.4254 13.7669 16.1014C13.7669 13.4481 15.8863 11.2988 18.5027 11.2988C19.8137 11.2988 20.999 11.8362 21.8512 12.7058C22.7087 13.5755 23.2386 14.7775 23.2386 16.1014C23.2386 18.3615 21.6982 20.256 19.6225 20.7656V14.9603L17.3775 17.237V28H19.6225V23.1032C22.9545 22.5604 25.5 19.6245 25.5 16.0959C25.5 14.135 24.7189 12.3624 23.4516 11.0773V11.0828Z" fill="#003C46"/>
@@ -119,73 +146,65 @@ export default function WorkersPage() {
       </svg>
     {/* header mobile */}
 
+    {/* <a href="#" >
+      <img src="/images/icons/IconButton.svg" alt="back" className="max-md:ml-[4.665vw] max-md:w-[10.417vw] max-md:h-[10.417vw]"/>
+    </a> */}
+
       <div className="max-md:px-4 px-[3.056vw]">
-        <h1 className="max-md:text-2xl text-[3.889vw]  text-white text-center max-md:mt-6 mt-[5vw] max-md:mb-4 mb-[3.056vw] max-md:text-start">
-          Workers
+        <h1 className="max-md:text-2xl text-[3.889vw] text-white text-center max-md:mt-6 mt-[5vw] max-md:mb-4 mb-[3.056vw] max-md:text-start">
+          Работники
         </h1>
   
-        {/* Фильтр по районам */}
-        <div className="flex flex-wrap flex-row max-md:flex-wrap justify-center max-md:gap-2 gap-4 max-md:mb-6 mb-[9.167vw] max-md:flex-row  max-md:hidden">
-          {[
-            { id: "all", name: "Все районы" },
-            { id: 1, name: "Байсангуровский" },
-            { id: 2, name: "Шейх Мансуровский" },
-            { id: 3, name: "Ахматовский" },
-          ].map((district) => (
-            <button
-              key={district.id}
-              className={`max-md:px-3 px-4 max-md:py-1.5 py-2 max-md:text-sm text-base rounded-full border border-white/20 
-                ${activeDistrict === district.id ? "bg-white text-black" : "bg-transparent text-white"}`}
-              onClick={() => setActiveDistrict(district.id)}
-            >
-              {district.name}
-            </button>
-          ))}
-        </div>
-  
         {/* Фильтры и кнопка создания */}
-        <div className="flex max-md:flex-col flex-row justify-between max-md:gap-4 max-md:mb-4 mb-[1.806vw]">
-          <div className="flex max-md:flex-wrap max-md:gap-2 items-center">
-            <div
-              className="relative flex items-center"
-              onMouseEnter={() => setShowRoleDropdown(true)}
-              onMouseLeave={() => setShowRoleDropdown(false)}
+        <div className="flex max-md:flex-col flex-row justify-center max-md:gap-4 max-md:mb-4 mb-[1.806vw]">
+          <div className="flex flex-wrap gap-2 items-center justify-center">
+            <button
+              className={`text-base text-white border border-white/20 rounded-full py-[0.556vw] px-[1.111vw] ${activeDistrict === "all" ? "bg-white text-[#003C46]" : ""}`}
+              onClick={() => setActiveDistrict("all")}
             >
-              <div className="flex items-center max-md:py-1.5 py-[0.556vw] max-md:px-3 px-[1.111vw] border border-white/20 rounded-full">
-                <button className="max-md:text-sm text-base text-white">{getRoleName(activeRole)}</button>
-                <img className="max-md:w-4 max-md:h-4 w-[1.111vw] h-[1.111vw] ml-2" src="../images/icons/dawn.svg" alt="dropdown" />
-              </div>
-              {showRoleDropdown && (
-                <div className="absolute top-full left-0 mt-1 bg-white rounded-lg shadow-lg z-10">
-                  {[
-                    { id: "all", name: "All" },
-                    { id: "courier", name: "Courier" },
-                    { id: "confectioner", name: "Confectioner" },
-                  ].map((role) => (
-                    <div
-                      key={role.id}
-                      className="px-4 py-2 max-md:text-sm text-base hover:bg-gray-100 cursor-pointer"
-                      onClick={() => {
-                        setActiveRole(role.id);
-                        setShowRoleDropdown(false);
-                      }}
-                    >
-                      {role.name}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-            <button className="max-md:text-sm text-base text-white border border-white/20 rounded-full max-md:py-1.5 py-[0.556vw] max-md:px-3 px-[1.111vw]">
-              Available
+              Все районы 55
+            </button>
+            <button
+              className={`text-base text-white border border-white/20 rounded-full py-[0.556vw] px-[1.111vw] ${activeDistrict === 1 ? "bg-white text-[#003C46]" : ""}`}
+              onClick={() => setActiveDistrict(1)}
+            >
+              Байсангуровский 32
+            </button>
+            <button
+              className={`text-base text-white border border-white/20 rounded-full py-[0.556vw] px-[1.111vw] ${activeDistrict === 2 ? "bg-white text-[#003C46]" : ""}`}
+              onClick={() => setActiveDistrict(2)}
+            >
+              Шейх Мансуровский 12
+            </button>
+            <button
+              className={`text-base text-white border border-white/20 rounded-full py-[0.556vw] px-[1.111vw] ${activeDistrict === 3 ? "bg-white text-[#003C46]" : ""}`}
+              onClick={() => setActiveDistrict(3)}
+            >
+              Ахматовский 4
             </button>
           </div>
           
+          <div
+            className="relative flex items-center"
+            ref={roleDropdownRef}
+            onClick={() => setShowRoleDropdown((prev) => !prev)}
+          >
+            <div className="flex items-center py-1.5 px-3 border border-white/20 rounded-full">
+              <button className="text-sm text-white">Все роли</button>
+              <img className="w-4 h-4 ml-2" src="../images/icons/dawn.svg" alt="dropdown" />
+            </div>
+            {showRoleDropdown && (
+              <div className="absolute top-full left-0 mt-1 bg-white rounded-lg shadow-lg z-10 opacity-80">
+                {/* Options for roles */}
+              </div>
+            )}
+          </div>
+          
           <button
-            className="max-md:text-sm text-base max-md:py-1.5 py-[0.417vw] max-md:px-3 px-[0.833vw] text-[#003C46] bg-[#53CFBA] rounded-[0.556vw]"
+            className="max-md:text-sm text-base text-[#003C46] bg-[#53CFBA] rounded-[0.556vw] max-md:py-1.5 py-[0.417vw] max-md:px-3 px-[0.833vw]"
             onClick={() => handleNavigation("/worker/create")}
           >
-            create worker
+            Создать работника
           </button>
         </div>
   
@@ -283,7 +302,7 @@ export default function WorkersPage() {
   </div>
 
   {/* Индикатор */}
-  <div className="w-[139px] h-[5px] bg-white rounded-[100px] mx-auto mb-[8px]" />
+ 
 </div>
     </div>
     

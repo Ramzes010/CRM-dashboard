@@ -12,8 +12,9 @@ export default function Header() {
   };
 
   return (
-    <header className="w-[100vw] bg-[#E6EBCE] max-md:hidden">
-      <div className="w-[83.33vw] h-[5.56vw] relative mx-auto flex items-center">
+    <div className="fixed top-0 left-0 right-0 z-50 ">
+      <header className="w-[100vw] bg-[#E6EBCE] max-md:hidden">
+      <div className="w-[83.33vw] h-[5.56vw] relative mx-auto flex items-center ">
         <div className="flex items-center gap-[1.11vw]">
           <HeaderLogoPicheni />
           <div className="w-[2.78vw] h-[2.78vw] flex items-center justify-center">
@@ -43,6 +44,20 @@ export default function Header() {
           </button>
         </nav>
       </div>
+     
     </header>
+
+    <div className="max-md:hidden flex justify-between max-w-[99vw]">
+     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <path fillRule="evenodd" clipRule="evenodd" d="M24 0H0V24C0 10.7452 10.7452 0 24 0Z" fill="#E6EBCE"/>
+     </svg>
+     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+       <path fillRule="evenodd" clipRule="evenodd" d="M0 0H24V24C24 10.7452 13.2548 0 0 0Z" fill="#E6EBCE"/>
+     </svg>
+   </div>
+
+    </div>
+    
+     
   );
 }
